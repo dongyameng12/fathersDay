@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>北京移动</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/modernizr.2.5.3.min.js"></script>
+    <script src="js/preLoader.js"></script>
+    <script src="js/jweixin-1.0.0.js"></script>
+    <script>
+        preLoader([
+            './images/all_btn.png',
+            './images/bg.png',
+            './images/end_01.png',
+            './images/end_02.png',
+            './images/end_03.png',
+            './images/end_bg.png',
+            './images/end_bott.png',
+            './images/end_btn.png',
+            './images/end_look.png',
+            './images/home_01.png',
+            './images/home_02.png',
+            './images/home_left.png',
+            './images/home_rig.png',
+            './images/home_title.png',
+            './images/homex_01.png',
+            './images/homex_02.png',
+            './images/homex_03.png',
+            './images/homex_04.png',
+            './images/loading.gif',
+            './images/p_01.png',
+            './images/p_02.png',
+            './images/p_03.png',
+            './images/p_04.png',
+            './images/p_05.png',
+            './images/p_bg.png',
+            './images/palymemories.png',
+            './images/ph_01.png',
+            './images/rule.png',
+            './images/startx.png',
+            './images/tc_01.png',
+            './images/tc_bg.png',
+            './images/tc_sure.png',
+            './images/tc_xg.png',
+            './images/tc_xsure.png'
+        ], function (percentage) {
+            var percentT = percentage * 100;
+            $('#loader_info').html((parseInt(percentT)) + '%');
+            if (percentage === 1) {
+                setTimeout(function () {
+                    $('#loader').remove();
+                    $('.home').show();
+                    $('#musicMenu').addClass('move').show();
+                    music.play();
+                }, 1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 测试按钮 -->
+    <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
+    <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
+    <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">恢复首次登录</button>
+    <!--loading-->
+    <section id="loader">
+        <div>
+            <img src="./images/loading.gif" alt="loading">
+        </div>
+        <p>努力加载中...</p>
+        <p id="loader_info"></p>
+    </section>
+    <!-- 背景音乐 -->
+    <section class="music" id="musicMenu">
+        <audio src="audio/music.mp3" preload="none" loop id="music" autoplay=false></audio>
+    </section>
+    <!-- 场景声音 -->
+    <section>
+        <audio src="audio/ms1.mp3"  id="ms1"></audio>
+        <audio src="audio/ms2.mp3" id="ms2"></audio>
+        <audio src="audio/ms3.wav" id="ms3"></audio>
+        <audio src="audio/ms4.wav" id="ms4"></audio>
+        <audio src="audio/ms5.wav" id="ms5"></audio>
+    </section>
+    <!-- 首页 -->
+    <section class="home">
+        <div>
+            <a href="javascript:void(0);"></a>
+            <div></div>
+        </div>
+        <div>
+            <div id="change"></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- 开启相册 -->
+        <div id="start_memories"></div>
+        <div></div>
+    </section>
+    <!-- 照片展示 -->
+    <section class="phdisplay">
+        <div>
+            <div></div>
+        </div>
+        <div>
+            <ul class="ph_list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- 播放回忆 -->
+        <div id="play_memories"></div>
+        <div></div>
+    </section>
+    <!-- 回忆录 -->
+    <section class="list flipbook-viewport">
+        <div class="container">
+            <div class="flipbook">
+                <!-- 场景1 -->
+                <div><p></p></div>
+                <!-- 场景2-->
+                <div><p></p></div>
+                <!-- 场景3 -->
+                <div><p></p></div>
+                <!-- 场景4-->
+                <div><p></p></div>
+                <!-- 场景5 -->
+                <div><p></p></div>
+            </div>
+        </div>
+        <div id="return">
+            <a href="javascript:void(0);" class="prev">返回</a>
+            <a href="javascript:void(0);" class="next">下一页</a>
+        </div>
+    </section>
+    <!-- 结束页 -->
+    <section class="end">
+        <div>
+            <a href="javascript:void(0)" id="again_look"></a>
+            <div>
+                <input id="inputTel" type="number" pattern="[0-9]*" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入手机号码">
+                <a href="javascript:void(0);" id="givebtn"></a>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p>
+                        <a href="javascript:;"></a>
+                    </p>
+                    <p>
+                        <a href="javascript:;"></a>
+                    </p>
+                </div>
+                <div>
+                    <a href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </section>
+    <!-- 信息确认 -->
+    <section class="tc tc_01">
+        <div>
+            <div></div>
+            <div>
+                <p>您是否将
+                    <span> 50</span>
+                    <span>MB</span> 全国流量 </p>
+                <p>转赠到手机号码</p>
+                <p class="phone_text">13800000000 </p>
+                <p>的账户中？</p>
+            </div>
+            <div>
+                <p>点击确认后，信息将不可更改。</p>
+            </div>
+        </div>
+        <div>
+            <a href="javascript:void(0);" id="modify"></a>
+            <a href="javascript:void(0);" id="givebtn_01"></a>
+        </div>
+    </section>
+    <!-- 温馨提示 -->
+    <section class="tc tc_02">
+        <div>
+            <div>
+                <p>您已将
+                    <span> 50</span>
+                    <span>MB</span> 全国流量 </p>
+                <p>转赠到手机号码</p>
+                <p class="phone_text">13800000000 </p>
+                <p>的账户中。</p>
+            </div>
+            <div>
+                <p>流量将于15日内到账，</p>
+                <p> 有效期7天</p>
+                <p>(流量到账后，立即生效)</p>
+            </div>
+            <a href="javascript:void(0);"></a>
+        </div>
+        <a href="javascript:void(0);" id="givebtn_02"></a>
+    </section>
+    <!-- 遮罩层 -->
+    <section class="mask" id="mask"></section>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</body>
+</html>
+<script src="js/index.js"></script>

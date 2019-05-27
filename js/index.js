@@ -190,16 +190,6 @@ $(document).ready(function () {
     // 当前页内容的效果
     function currPage() {
         $(".flipbook").bind("turned",function (event,page,view) {
-            // if (page == 1) {
-            //     console.log('1')
-            // }
-            // if (page == 5) {
-            //     if (firstLoading) {
-            //         debugger
-            //     } else {
-                    
-            //     }
-            // }
             pageEffect(page)
         })
     }
@@ -252,10 +242,10 @@ $(document).ready(function () {
                     setTimeout(function(){
                         $('.home').hide();
                         if (firstLoading) {
-                            // $('#play_memories').removeClass('bScale');
+                            $('#play_memories').removeClass('bScale');
                             againEnter()
                         }else{
-                            // $('#play_memories').addClass('bScale');
+                            $('#play_memories').addClass('bScale');
                         }
                         $('.phdisplay').show();
                     },800)

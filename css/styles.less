@@ -90,7 +90,7 @@ html,body{
                 margin: auto;
             }
             &:nth-child(4){
-                position: fixed;
+                position: absolute;
                 bottom: 0;
                 width:  7.5rem;
                 height:1.94rem;
@@ -201,10 +201,12 @@ html,body{
                 &.bScale{
                     -webkit-animation: btnScale 1s linear 0s infinite both;
                     animation: btnScale 1s linear 0s infinite both; 
+                    animation-direction:alternate;
+                    -webkit-animation-direction:alternate; /* Safari 和 Chrome */
                 }
             }
             &:nth-child(4){
-                position: fixed;
+                position: absolute;
                 bottom: 0;
                 width:  7.5rem;
                 height:1.94rem;
@@ -615,8 +617,8 @@ html,body{
       transform:  scale(1);
     }
     50%{
-        -webkit-transform:  scale(.5);
-        transform:  scale(.5);
+        -webkit-transform:  scale(.7);
+        transform:  scale(.7);
     }
     100% {
         -webkit-transform:  scale(1);
@@ -629,8 +631,8 @@ html,body{
         transform:  scale(1);
       }
       50%{
-          -webkit-transform:  scale(.5);
-          transform:  scale(.5);
+          -webkit-transform:  scale(.7);
+          transform:  scale(.7);
       }
       100% {
           -webkit-transform:  scale(1);

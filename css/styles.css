@@ -98,7 +98,7 @@ body section.home > div:nth-child(3) {
 }
 html section.home > div:nth-child(4),
 body section.home > div:nth-child(4) {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 7.5rem;
   height: 1.94rem;
@@ -231,10 +231,13 @@ html section.phdisplay > div:nth-child(3).bScale,
 body section.phdisplay > div:nth-child(3).bScale {
   -webkit-animation: btnScale 1s linear 0s infinite both;
   animation: btnScale 1s linear 0s infinite both;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  /* Safari 和 Chrome */
 }
 html section.phdisplay > div:nth-child(4),
 body section.phdisplay > div:nth-child(4) {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 7.5rem;
   height: 1.94rem;
@@ -652,8 +655,8 @@ body section.mask {
     transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
   }
   100% {
     -webkit-transform: scale(1);
@@ -666,8 +669,8 @@ body section.mask {
     transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
   }
   100% {
     -webkit-transform: scale(1);

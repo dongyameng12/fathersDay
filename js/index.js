@@ -322,7 +322,7 @@ $(document).ready(function () {
         // pauseMusic ();
         $('.home').show();
     });
-    // 判断关注，绑定等
+    // 判断关注，绑定等（直接转增）
     function jiangli() {
         if (attention) {
             // 已关注
@@ -331,7 +331,8 @@ $(document).ready(function () {
                 $('.tc_01').show();
             } else {
                 // 未绑定手机号
-                alert('你还没绑定手机号');
+                $('.end').hide();
+                $('.bind').show();
             }
         } else {
             // 未关注
@@ -377,17 +378,31 @@ $(document).ready(function () {
         }
         return rtn;
     }
+    // 合上相册
+    $('#img_change').animate({width:'9.03rem',opacity:'0.95'},"slow",function(){
+        $('#img_change').animate({width:'7.23rem',opacity:'0.8'},"slow",function(){
+              $('#img_change').animate({width:'4.09rem',opacity:'0.5'},"slow",function(){
+                $('#img_change').animate({display:"none",opacity:'0'},"slow",function(){
+                    $('.last_second').css('display','none')
+                })
+              });
+        });
+    });
+    
     // 测试
     // 没有关注
     $('.test2').on('click',function(){
+        $('.test2').css('color','red');
         attention = false;
     });
-      // 没有关注
+      // 没有绑定
     $('.test3').on('click',function(){
+        $('.test3').css('color','red');
         binding = false;    
     });
     // 恢复首次登录
     $('.test4').on('click',function(){
+        $('.test4').css('color','red');
         localStorage.clear()
         window.location.href="index.html?time="+((new Date()).getTime());
     });

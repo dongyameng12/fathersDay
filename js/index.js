@@ -7,9 +7,14 @@ $(document).ready(function () {
     var attention = true;
     // 是否绑定手机号
     var binding = true;
+    // 本网，异网判断（本网）
+    var CM = true;
+    // 用于按钮弹窗，还是点击礼盒（默认按钮）
+    var isbtn
+    //是否分享（没分享）
+    var ishare = false
     //是否转增
     var increase;
-    // var firstLoading = true;
     // 定时器变量（为了清除定时器）
     var nextPage;
     // 是否第一次进入
@@ -183,7 +188,14 @@ $(document).ready(function () {
             currPage()
         } else {
             $('.list').hide()
-            $('.end').show()
+            $('.last_page').show()
+            setTimeout(function () {
+                endClose()
+                setTimeout(function () {
+                    $('.last_page').hide()
+                    $('.end').show()
+                }, 6500)
+            }, 3500)
         }
     };
     
@@ -213,14 +225,21 @@ $(document).ready(function () {
         } else if (current_page == 4) {
             console.log('4')  
         } else if (current_page == 5) {
-            setTimeout(function(){
-                // pauseMusic()
-                $('.list').hide()
-                $('.end').show()
-            },2000)
+            if(!firstLoading){
+                setTimeout(function () {
+                    $('.list').hide()
+                    $('.last_page').show()
+                    setTimeout(function () {
+                        endClose()
+                        setTimeout(function () {
+                            $('.last_page').hide()
+                            $('.end').show()
+                        }, 6500)
+                    }, 3500)
+                }, 2000)      
+            }
         }
     }
-
 
     // 首页翻书
     count_number = 0
@@ -243,6 +262,7 @@ $(document).ready(function () {
                         $('.home').hide();
                         if (firstLoading) {
                             $('#play_memories').removeClass('bScale');
+                            $('#tiaoguo').show()
                             againEnter()
                         }else{
                             $('#play_memories').addClass('bScale');
@@ -288,8 +308,6 @@ $(document).ready(function () {
             })
         });
     }
-
-    
     // 回忆录中的上一页和下一页
     $('.prev').on('click',function(){
         pre_page();
@@ -300,13 +318,21 @@ $(document).ready(function () {
     // 结束页
     // 送她520MB
     $('#givebtn').on('click',function(){
-        var input_val = $('#inputTel').val();
-        if (istel(input_val)) {
-            $('.phone_text').text(input_val);
+        if ( $('#givebtn').hasClass('allget_btn')) {
+            // 查看
             jiangli();
         } else {
-           alert('请输入正确的北京移动号'); 
+            // 送她
+            var input_val = $('#inputTel').val();
+            if (istel(input_val)) {
+                $('.phone_text').text(input_val);
+                isbtn = true
+                jiangli();
+            } else {
+               alert('请输入正确的北京移动号'); 
+            }     
         }
+      
     });
  
     // 点击再看相册
@@ -322,13 +348,39 @@ $(document).ready(function () {
         // pauseMusic ();
         $('.home').show();
     });
+    //点击礼盒
+    $('#main_share').on('click',function(){
+        ishare?jiangli(): $('.share').show()
+    })
+    // 关闭分享(测试用)
+    $('.share').on('click',function(){
+        isbtn = false;
+        ishare = true;
+        $('.share').hide()
+        jiangli()
+    })
     // 判断关注，绑定等（直接转增）
     function jiangli() {
         if (attention) {
             // 已关注
             if (binding) {
                 showMask();
-                $('.tc_01').show();
+                if(isbtn){
+                $('#givebtn').hasClass('allget_btn')?$('.tc_02').show():$('.tc_01').show()
+                }else{
+                    // 本网
+                    if(CM){
+                        $('.tc_03').show()
+                    }else{
+                        // 异网
+                        if($('#main_share').hasClass('allget')){
+                            $('.tc_07').show()
+                        }else{
+                            $('.tc_04').show()
+                        }
+                          
+                    }
+                }
             } else {
                 // 未绑定手机号
                 $('.end').hide();
@@ -352,6 +404,18 @@ $(document).ready(function () {
             $('.tc_01').hide();
         }
     };
+    // 转增或取消
+    function TransGive() {
+        if (increase) {
+            //转增
+            $('.tc_04').hide();
+            $('.tc_05').show();
+        } else {
+            //  取消
+            hideMask();
+            $('.tc_04').hide();
+        }
+    };
     // 信息确认（修改）
     $('#modify').on('click', function () {
         increase = false;
@@ -364,8 +428,53 @@ $(document).ready(function () {
     })
     // 点击温馨提示（确认）
     $('#givebtn_02').on('click', function () {
+        $('#givebtn').addClass('allget_btn').css('background-image','url(./images/tc_sure.png)') 
+        $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
         hideMask();
         $('.tc_02').hide();
+    })
+    // 异网弹窗2关闭
+    $('.close4').on('click',function(){
+        hideMask();
+        // $('#main_share').addClass('cancel')
+        $(this).parent().parent().hide();
+    })
+    // 异网弹窗2
+    $('#givebtn5').on('click',function(){
+        var inputMobile = $('#inputMobile').val();
+        if (istel(inputMobile)) {
+            $('.tc_05').hide()
+            $('.mobile_text').text(inputMobile)
+            $('.tc_06').show();
+        } else {
+           alert('请输入正确的北京移动号'); 
+        } 
+    })
+    // 异网弹窗3(修改)
+    $('#reset6').on('click',function(){
+        $('.tc_06').hide();
+        $('.tc_05').show();
+    })
+     // 异网弹窗3(确认)
+     $('#givebtn6').on('click',function(){
+        $('.tc_06').hide();
+        $('.tc_07').show();
+    })
+    // 异网弹窗4
+    $('#close7').on('click',function(){
+        $('#main_share').addClass('allget')
+        $(this).parent().hide();
+        hideMask()
+    })
+    // 异网弹窗4（确认）
+    $('#givebtn4').on('click',function(){
+        increase = true;  
+        TransGive()
+    })
+    // 点击关闭
+    $('.close').on('click',function(){
+        hideMask();
+        $(this).parent().hide();
     })
     //移动手机号码验证
     function istel(tel) {
@@ -379,16 +488,28 @@ $(document).ready(function () {
         return rtn;
     }
     // 合上相册
-    $('#img_change').animate({width:'9.03rem',opacity:'0.95'},"slow",function(){
-        $('#img_change').animate({width:'7.23rem',opacity:'0.8'},"slow",function(){
-              $('#img_change').animate({width:'4.09rem',opacity:'0.5'},"slow",function(){
-                $('#img_change').animate({display:"none",opacity:'0'},"slow",function(){
-                    $('.last_second').css('display','none')
-                })
-              });
-        });
-    });
-    
+    function endClose (){
+        $('#last_first').removeClass('rotateInDownRight')
+        setTimeout(cludeChangeImg(),3000)
+    }
+    function cludeChangeImg () {
+        $('.last_img').animate({width:"4.9rem",height:'5.58rem',opacity:'0',filter:'alpha(opacity=0)'},2000,function(){
+            $('#last_first').css('display','none')
+            $('.last_01').delay(1000).animate({opacity:'1'},'slow')
+            $('.last_02').delay(2000).animate({opacity:'1'},"slow")
+            $('.last_03').delay(3000).animate({opacity:'1'},"slow")
+        })
+    }
+    // 活动规则
+    $('.rule').on('click',function(){
+        showMask();
+        $('.tc_rule').show();
+    })
+    // 点击跳过
+    $('#tiaoguo').on('click',function(){
+        $('.phdisplay').hide();
+        $('.end').show()
+    })
     // 测试
     // 没有关注
     $('.test2').on('click',function(){
@@ -405,6 +526,11 @@ $(document).ready(function () {
         $('.test4').css('color','red');
         localStorage.clear()
         window.location.href="index.html?time="+((new Date()).getTime());
+    });
+    // 异网
+    $('.test5').on('click',function(){
+        $('.test5').css('color','red');
+        CM = false;    
     });
 });
 function playMusic (){

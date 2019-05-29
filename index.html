@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>北京移动</title>
     <link rel="stylesheet" href="css/reset.min.css">
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/fastclick.js"></script>
@@ -17,8 +16,15 @@
         preLoader([
             './images/all_btn.png',
             './images/bg.png',
+            './images/close.png',
             './images/end_01.png',
+            './images/end_02.png',
+            './images/end_03_01.png',
+            './images/end_03.png',
+            './images/end_04_01.png',
+            './images/end_04.png',
             './images/end_btn.png',
+            './images/end_li.png',
             './images/end_look.png',
             './images/home_01.png',
             './images/home_02.png',
@@ -29,6 +35,8 @@
             './images/homex_02.png',
             './images/homex_03.png',
             './images/homex_04.png',
+            './images/last_06.png',
+            './images/last_beiying.png',
             './images/loading.gif',
             './images/p_01.png',
             './images/p_02.png',
@@ -38,11 +46,17 @@
             './images/p_bg.png',
             './images/palymemories.png',
             './images/ph_01.png',
+            './images/rule_bg.png',
             './images/rule.png',
+            './images/share_01.png',
             './images/startx.png',
             './images/tc_01.png',
             './images/tc_bg.png',
+            './images/tc_cancel.png',
+            './images/tc_cgive.png',
+            './images/tc_qita.png',
             './images/tc_sure.png',
+            './images/tc_tj.png',
             './images/tc_xg.png',
             './images/tc_xsure.png'
         ], function (percentage) {
@@ -51,8 +65,7 @@
             if (percentage === 1) {
                 setTimeout(function () {
                     $('#loader').remove();
-                    // $('.home').show();
-                    $('.last_page').show();
+                    $('.home').show();
                     $('#musicMenu').addClass('move').show();
                     music.play();
                 }, 1000);
@@ -66,6 +79,7 @@
     <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
     <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
     <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">恢复首次登录</button>
+    <button style="position:absolute;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test5">异网用户</button>
     <!--loading-->
     <section id="loader">
         <div>
@@ -89,7 +103,7 @@
     <!-- 首页 -->
     <section class="home">
         <div>
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);" class="rule"></a>
             <div></div>
         </div>
         <div>
@@ -118,6 +132,7 @@
         <!-- 播放回忆 -->
         <div id="play_memories"></div>
         <div></div>
+        <a href="javascript:void(0);" id="tiaoguo">跳过</a>
     </section>
     <!-- 回忆录 -->
     <section class="list flipbook-viewport">
@@ -142,8 +157,9 @@
     </section>
     <!-- 合上相册 -->
     <section class="last_page">
-        <div class="last_first rotateInDownRight"></div>
-        <div class="last_second"><img src="./images/last_02.png" alt="" srcset="" id="img_change"></div>
+        <div id="last_first" class="rotateInDownRight">
+            <img src="./images/last_06.png" class="last_img">
+        </div>
         <div>
             <div class="last_01">
                 <p>几张泛黄的照片写满了回忆</p>
@@ -163,7 +179,7 @@
                 <p>移动亲情网守护每个家庭</p>
                 <p>一起互打不花钱</p>
             </div>
-            <div class="last_03"></div>
+            <div class="last_02"></div>
         </div>
         
     </section>
@@ -171,11 +187,13 @@
     <section class="end">
         <div>
             <a href="javascript:void(0)" id="again_look"></a>
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);"class="rule"></a>
         </div>
         <div>
-            <div class="tada"></div>
-            <input id="inputTel" type="number" pattern="[0-9]*" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入北京移动手机号码">
+            <div class="tada" id='main_share'></div>
+            <div id="change_context">
+                <input id="inputTel" type="number" pattern="[0-9]*" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入北京移动手机号码">
+            </div>
             <a href="javascript:void(0);" id="givebtn"></a>
         </div>
         <div>
@@ -183,6 +201,18 @@
             <a href="javascript:void(0);"><span></span></a>
         </div>
         <div></div>
+    </section>
+    <!-- 活动规则 -->
+    <section class="tc tc_rule">
+        <ul>
+            <li>活动规则活动规则活动规则活动规则活动规则活动规则</li>
+            <li>活动规则活动规则活动规则活动规则活动规则活动规则</li>
+            <li>活动规则活动规则活动规则活动规则活动规则</li>
+            <li>活动规则活动规则活动规则活动规则活动规则</li>
+            <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+            <li>活动规则活动规则活动规则活动规则活动规则活动规则活动规则活动规则</li>
+        </ul>
+        <a href="javascript:void(0);" class="close"></a>
     </section>
     <!-- 分享页 -->
     <section class="share">
@@ -242,11 +272,11 @@
             <p>（流量到账后，立即生效）</p> 
             <a href="javascript:void(0);"></a>
         </div>
-        <a href="javascript:void(0);"></a>
+        <a href="javascript:void(0);" class="close"></a>
     </section>
     <!-- 异网弹窗1 -->
     <section class="tc tc_04">
-        <div><p></p></div>
+        <div><p class="close4"></p></div>
         <div> 
             <p>恭喜您的手机号</p>
             <p> XXXXXXXXXXX</p>
@@ -257,12 +287,12 @@
         </div>
         <div>
             <a href="javascript:void(0);"></a>
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);" id="givebtn4"></a>
         </div>
     </section>
     <!-- 异网弹窗2 -->
     <section class="tc tc_05">
-        <div></div>
+        <div><p class="close4"></p></div>
         <div>
             <p>请输入好友 </p>
             <p>北京移动手机号码</p>
@@ -272,7 +302,7 @@
             </p>
             <p>(流量仅可在活动期间进行转赠)</p>
         </div>
-        <a href="javascript:void(0);"></a>
+        <a href="javascript:void(0);" id="givebtn5"></a>
     </section>
     <!-- 异网弹窗3 -->
     <section class="tc tc_06">
@@ -280,12 +310,12 @@
             <p>您是否将</p>
             <p><span> 500MB</span>全国流量 </p>
             <p>转赠到手机号码</p>
-            <p><span>xxxxxxxxxxx </span> 账户中</p>
+            <p><span class="mobile_text">xxxxxxxxxxx </span> 账户中</p>
             <p>（流量仅可在活动期间进行转赠）</p>
         </div>
         <div>
-            <a  href="javascript:void(0)"></a>
-            <a  href="javascript:void(0)"></a>
+            <a  href="javascript:void(0)" id="reset6"></a>
+            <a  href="javascript:void(0)" id="givebtn6"></a>
         </div>
     </section>
     <!-- 异网流量弹窗 4-->
@@ -299,7 +329,7 @@
                 <p>（流量到账后，立即生效）</p>
                 <a href="javascript:void(0);"></a>
             </div>
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);" id="close7"></a>
         </section>
     <!-- 遮罩层 -->
     <section class="mask" id="mask"></section>

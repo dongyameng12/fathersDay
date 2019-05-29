@@ -428,7 +428,7 @@ $(document).ready(function () {
     })
     // 点击温馨提示（确认）
     $('#givebtn_02').on('click', function () {
-        $('#givebtn').addClass('allget_btn').css('background-image','url(./images/tc_sure.png)') 
+        $('#givebtn').addClass('allget_btn').css('background-image','url(./images/end_blook.png)') 
         $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
         hideMask();
         $('.tc_02').hide();

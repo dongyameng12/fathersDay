@@ -400,6 +400,7 @@ body section.last_page > div:nth-child(2) > div:nth-child(4) {
 html section.end,
 body section.end {
   display: none;
+  min-height: 100%;
 }
 html section.end > div:nth-child(1),
 body section.end > div:nth-child(1) {
@@ -552,7 +553,7 @@ body section.end > div:nth-child(3) > a:nth-child(2) > span {
 }
 html section.end > div:nth-child(4),
 body section.end > div:nth-child(4) {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 7.5rem;
   height: 1.94rem;

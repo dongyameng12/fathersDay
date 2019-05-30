@@ -188,6 +188,7 @@ $(document).ready(function () {
             currPage()
         } else {
             $('.list').hide()
+            resetStyle();
             $('.last_page').show()
             setTimeout(function () {
                 endClose()
@@ -195,7 +196,7 @@ $(document).ready(function () {
                     $('.last_page').hide()
                     $('.end').show()
                 }, 6500)
-            }, 3500)
+            }, 1000)
         }
     };
     
@@ -228,6 +229,7 @@ $(document).ready(function () {
             if(!firstLoading){
                 setTimeout(function () {
                     $('.list').hide()
+                    resetStyle()
                     $('.last_page').show()
                     setTimeout(function () {
                         endClose()
@@ -235,7 +237,7 @@ $(document).ready(function () {
                             $('.last_page').hide()
                             $('.end').show()
                         }, 6500)
-                    }, 3500)
+                    }, 1000)
                 }, 2000)      
             }
         }
@@ -329,7 +331,8 @@ $(document).ready(function () {
                 isbtn = true
                 jiangli();
             } else {
-               alert('请输入正确的北京移动号'); 
+               alert('请输入正确的北京移动号');
+               $('#inputTel').val('') 
             }     
         }
       
@@ -337,6 +340,7 @@ $(document).ready(function () {
  
     // 点击再看相册
     $('#again_look').on('click',function(){
+        resetStyle()
         firstLoading = localStorage.getItem('firstLoading')
         $('.end').hide();
         $('#change').css('background-image', 'url(./images/homex_01.png)');
@@ -447,7 +451,8 @@ $(document).ready(function () {
             $('.mobile_text').text(inputMobile)
             $('.tc_06').show();
         } else {
-           alert('请输入正确的北京移动号'); 
+           alert('请输入正确的北京移动号');
+           $('#inputMobile').val('') 
         } 
     })
     // 异网弹窗3(修改)
@@ -493,12 +498,18 @@ $(document).ready(function () {
         setTimeout(cludeChangeImg(),3000)
     }
     function cludeChangeImg () {
-        $('.last_img').animate({width:"4.9rem",height:'5.58rem',opacity:'0',filter:'alpha(opacity=0)'},2000,function(){
+        $('.last_img').animate({width:"4.9rem",height:'5.58rem',opacity:'0',left:'0',right:'0',filter:'alpha(opacity=0)'},1500,function(){
             $('#last_first').css('display','none')
             $('.last_01').delay(1000).animate({opacity:'1'},'slow')
             $('.last_02').delay(2000).animate({opacity:'1'},"slow")
             $('.last_03').delay(3000).animate({opacity:'1'},"slow")
         })
+    }
+     // 重置合上相册的初始样式
+     function resetStyle(){
+        $('.reset_list').css('opacity','0')
+        $('.last_img').css({'opacity':'1','width':'9rem','height':'12rem','left':'-1.3rem'})
+        $('#last_first').css('display','block')
     }
     // 活动规则
     $('.rule').on('click',function(){

@@ -5,13 +5,14 @@
     function isArray(obj) {
         return Object.prototype.toString.call(obj) === '[object Array]';
     }
+
     /**
      * @param imgList 要加载的图片地址列表，['aa/asd.png','aa/xxx.png']
      * @param callback 每成功加载一个图片之后的回调，并传入“已加载的图片总数/要加载的图片总数”表示进度
-     * @param timeout 每个图片加载的超时时间，默认为20s
+     * @param timeout 每个图片加载的超时时间，默认为5s
      */
     var loader = function (imgList, callback, timeout) {
-        timeout = timeout || 20000;
+        timeout = timeout || 5000;
         imgList = isArray(imgList) && imgList || [];
         callback = typeof(callback) === 'function' && callback;
 
@@ -44,5 +45,5 @@
 
     "function" === typeof define && define.cmd ? define(function () {
         return loader
-    }) : window.preLoader = loader;
+    }) : window.imgLoader = loader;
 })();

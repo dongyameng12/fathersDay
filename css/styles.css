@@ -448,6 +448,10 @@ body section.end > div:nth-child(2) > div:nth-child(1) {
   background: url('../images/end_li.png') no-repeat;
   background-size: cover;
 }
+html section.end > div:nth-child(2) > div:nth-child(2),
+body section.end > div:nth-child(2) > div:nth-child(2) {
+  -webkit-user-select: text !important;
+}
 html section.end > div:nth-child(2) > div:nth-child(2) > input,
 body section.end > div:nth-child(2) > div:nth-child(2) > input {
   position: absolute;
@@ -965,7 +969,6 @@ body section.tc.tc_05 > div:nth-child(2) > p:nth-child(3) > input {
   border-radius: .1rem;
   border: solid 1px #826c58;
   box-sizing: border-box;
-  line-height: .58rem;
   background-color: transparent;
   padding-left: .15rem;
 }

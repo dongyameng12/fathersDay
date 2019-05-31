@@ -161,7 +161,7 @@ $(document).ready(function () {
         // ms1.pause();
         nextPage = setInterval(function () {
             next_page();
-        }, 2000);
+        }, 3500);
     }
     // 第一页
     $('.flipbook').bind("first", function () {
@@ -216,20 +216,18 @@ $(document).ready(function () {
         } else if (current_page == 4) {
             console.log('4')  
         } else if (current_page == 5) {
-            if(!firstLoading){
+            setTimeout(function () {
+                $('.list').hide()
+                resetStyle()
+                $('.last_page').show()
                 setTimeout(function () {
-                    $('.list').hide()
-                    resetStyle()
-                    $('.last_page').show()
+                    endClose()
                     setTimeout(function () {
-                        endClose()
-                        setTimeout(function () {
-                            $('.last_page').hide()
-                            $('.end').show()
-                        }, 6500)
-                    }, 1000)
-                }, 2000)      
-            }
+                        $('.last_page').hide()
+                        $('.end').show()
+                    }, 6500)
+                }, 1000)
+            }, 2000)   
         }
     }
 
@@ -276,15 +274,10 @@ $(document).ready(function () {
     $('#play_memories').on('click', function () {
         $('.phdisplay').hide();
         $('.list').show();
-        if (!firstLoading) {
-            setTimeout(function () {
-                // console.log(1)
-                ms1.play();
-                time_auto();
-            },1000)
-        }else{
-          $('#return').show();
-        }
+        setTimeout(function () {
+            ms1.play();
+            time_auto();
+        },1000)
         playMusic ();
     })
     // 照片展示（点击所有的照片跳转到对应场景）

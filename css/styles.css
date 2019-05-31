@@ -330,7 +330,7 @@ body section.list > div:nth-child(2) > a:nth-child(1) {
   border-left: 0;
   border-top-right-radius: .2rem;
   border-bottom-right-radius: .2rem;
-  padding: .08rem .26rem;
+  padding: .04rem .26rem;
   text-shadow: 1px 1px 5px #ca8963;
   box-sizing: border-box;
   text-align: center;
@@ -1078,25 +1078,25 @@ body section.tc.tc_07 > div > p:nth-child(3) span {
 }
 html #inputTel::-webkit-input-placeholder,
 body #inputTel::-webkit-input-placeholder {
-  font-size: .3rem;
+  font-size: .28rem;
   color: #fff;
   text-align: center;
 }
 html #inputTel:-moz-placeholder,
 body #inputTel:-moz-placeholder {
-  font-size: .3rem;
+  font-size: .28rem;
   color: #fff;
   text-align: center;
 }
 html #inputTel::-moz-placeholder,
 body #inputTel::-moz-placeholder {
-  font-size: .3rem;
+  font-size: .28rem;
   color: #fff;
   text-align: center;
 }
 html #inputTel:-ms-input-placeholder,
 body #inputTel:-ms-input-placeholder {
-  font-size: .3rem;
+  font-size: .28rem;
   color: #fff;
   text-align: center;
 }

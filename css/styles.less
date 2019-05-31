@@ -1,12 +1,12 @@
-*{ 
-    touch-action: pan-y; 
-    -webkit-touch-callout:none;
-	-webkit-user-select:none;
-	-khtml-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
-} 
+// *{ 
+//     touch-action: pan-y; 
+//     -webkit-touch-callout:none;
+// 	-webkit-user-select:none;
+// 	-khtml-user-select:none;
+// 	-moz-user-select:none;
+// 	-ms-user-select:none;
+// 	user-select:none;
+// } 
 html,body{
     width: 100%;
     height: 100%;
@@ -414,6 +414,7 @@ html,body{
                     }
                     &:nth-child(2){
                         >input{
+                            -webkit-user-select:text!important; 
                             position: absolute;
                             top: 1.73rem;
                             left: 0;

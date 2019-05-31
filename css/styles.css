@@ -1,3 +1,12 @@
+*:not(input) {
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 html,
 body {
   width: 100%;
@@ -1072,28 +1081,24 @@ body #inputTel::-webkit-input-placeholder {
   font-size: .3rem;
   color: #fff;
   text-align: center;
-  line-height: .8rem;
 }
 html #inputTel:-moz-placeholder,
 body #inputTel:-moz-placeholder {
   font-size: .3rem;
   color: #fff;
   text-align: center;
-  line-height: .8rem;
 }
 html #inputTel::-moz-placeholder,
 body #inputTel::-moz-placeholder {
   font-size: .3rem;
   color: #fff;
   text-align: center;
-  line-height: .8rem;
 }
 html #inputTel:-ms-input-placeholder,
 body #inputTel:-ms-input-placeholder {
   font-size: .3rem;
   color: #fff;
   text-align: center;
-  line-height: .8rem;
 }
 html section.mask,
 body section.mask {

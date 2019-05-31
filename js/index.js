@@ -2,15 +2,6 @@
 $(function () {
     FastClick.attach(document.body);
 })
-// 输入法聚焦
-$('.name').on('focus',function () {
-    var bodyname = document.querySelector('.name');
-    bodyname.scrollTop = bodyname.scrollHeight; 
-})
-// 软键盘顶起来解决问题
-$('.name').on('blur',function () {
-    window.scroll(0,0)
-})
 $(document).ready(function () {
     //是否关注公众号
     var attention = true;

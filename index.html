@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/imgLoader.js"></script>
     <script src="js/fastclick.js"></script>
     <script src="js/modernizr.2.5.3.min.js"></script>
-    <script src="js/imgLoader.js"></script>
     <script src="js/jweixin-1.0.0.js"></script>
+    <script src="js/turn.html4.min.js"></script>
+    <script src="js/turn.js"></script>
     <script>
         imgLoader([
             './audio/music.mp3',
@@ -346,6 +348,15 @@
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
+        // 输入法聚焦
+        $('.name').on('focus', function () {
+            var bodyname = document.querySelector('.name');
+            bodyname.scrollTop = bodyname.scrollHeight;
+        })
+        // 软键盘顶起来解决问题
+        $('.name').on('blur', function () {
+            window.scroll(0, 0)
+        })
     </script>
 </body>
 </html>

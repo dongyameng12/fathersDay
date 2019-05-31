@@ -180,16 +180,6 @@ $(document).ready(function () {
     $('.flipbook').bind("last", function () {
         clearInterval(nextPage);
     })
-    //上一页
-    function pre_page() {
-        $('.flipbook').turn("previous");
-        if ($(".flipbook").turn("animating")) {
-            currPage();
-        } else {
-            $('.list').hide()
-            $('.phdisplay').show()
-        }
-    }
     // 下一页
     function next_page() {
         $('.flipbook').turn("next");
@@ -321,7 +311,8 @@ $(document).ready(function () {
     }
     // 回忆录中的上一页和下一页
     $('.prev').on('click',function(){
-        pre_page();
+        $('.list').hide()
+        $('.phdisplay').show()
     })
     $('.next').on('click',function(){
         next_page();

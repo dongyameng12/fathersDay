@@ -15,20 +15,10 @@ $(document).ready(function () {
     var ishare = false
     //是否转增
     var increase;
+    // 用于判断最最后一页是点击，还是自动播放
+    var clickNext = true
     // 定时器变量（为了清除定时器）
     var nextPage;
-    // 是否第一次进入
-    var firstLoading = false;
-    (function () {
-        var first_login = localStorage.getItem('firstLoading')
-        if (first_login == null) {
-            localStorage.setItem('firstLoading',true)
-            $('#return').hide()
-        } else {
-            firstLoading = true
-        }
-    })()
-
     // 背景音乐和声音的处理start
     var music = document.getElementById('music'),
         ms1 = document.getElementById('ms1'),
@@ -177,19 +167,19 @@ $(document).ready(function () {
         if ($(".flipbook").turn("animating")) {
             currPage()
         } else {
-            $('.list').hide()
             resetStyle();
+            $('.list').hide()
             $('.last_page').show()
             setTimeout(function () {
                 endClose()
-                setTimeout(function () {
-                    $('.last_page').hide()
-                    $('.end').show()
-                }, 6500)
             }, 1000)
         }
     };
-    
+    // 点击结束
+    $('.finish').on('click',function(){
+        $('.last_page').hide()
+        $('.end').show()   
+    })
     // 当前页内容的效果
     function currPage() {
         $(".flipbook").bind("turned",function (event,page,view) {
@@ -216,21 +206,23 @@ $(document).ready(function () {
         } else if (current_page == 4) {
             console.log('4')  
         } else if (current_page == 5) {
-            setTimeout(function () {
-                $('.list').hide()
-                resetStyle()
-                $('.last_page').show()
+            if (!firstLoading){
                 setTimeout(function () {
-                    endClose()
+                    resetStyle()
+                    $('.list').hide()
+                    $('.last_page').show()
                     setTimeout(function () {
-                        $('.last_page').hide()
-                        $('.end').show()
-                    }, 6500)
-                }, 1000)
-            }, 2000)   
+                        endClose()
+                        setTimeout(function () {
+                            $('.last_page').hide()
+                            $('.end').show()
+                        }, 6500)
+                    }, 1000)
+                }, 2000) 
+            }
         }
     }
-
+  
     // 首页翻书
     count_number = 0
     function flipbook () {
@@ -258,6 +250,7 @@ $(document).ready(function () {
                             $('#play_memories').addClass('bScale');
                         }
                         $('.phdisplay').show();
+                        blingBian()
                     },800)
                 } else {
                     setTimeout(changeBackground, 400);
@@ -273,12 +266,14 @@ $(document).ready(function () {
     //照片展示(播放回忆) 
     $('#play_memories').on('click', function () {
         $('.phdisplay').hide();
-        $('.list').show();
-        setTimeout(function () {
-            ms1.play();
+        if (!firstLoading) {
             time_auto();
-        },1000)
-        playMusic ();
+        }else{
+          $('#return').show();
+        }
+        playMusic();
+        $('.list').show();
+        currPage();
     })
     // 照片展示（点击所有的照片跳转到对应场景）
     function againEnter(){
@@ -324,16 +319,14 @@ $(document).ready(function () {
  
     // 点击再看相册
     $('#again_look').on('click',function(){
-        resetStyle()
         firstLoading = localStorage.getItem('firstLoading')
         $('.end').hide();
+        resetStyle()
         $('#change').css('background-image', 'url(./images/homex_01.png)');
         // 重置首页
         count_number = 0;
         // 重置第一个场景
         $(".flipbook").turn("page",1);
-        // 重置音乐
-        // pauseMusic ();
         $('.home').show();
     });
     //点击礼盒
@@ -486,7 +479,11 @@ $(document).ready(function () {
             $('#last_first').css('display','none')
             $('.last_01').delay(1000).animate({opacity:'1'},'slow')
             $('.last_02').delay(2000).animate({opacity:'1'},"slow")
-            $('.last_03').delay(3000).animate({opacity:'1'},"slow")
+            $('.last_03').delay(3000).animate({opacity:'1'},"slow",function(){
+                if (firstLoading) {
+                    $('.finish').show()
+                }
+            })
         })
     }
      // 重置合上相册的初始样式
@@ -494,6 +491,7 @@ $(document).ready(function () {
         $('.reset_list').css('opacity','0')
         $('.last_img').css({'opacity':'1','width':'9rem','height':'12rem','left':'-1.3rem'})
         $('#last_first').css('display','block')
+        $('.finish').hide()
     }
     // 活动规则
     $('.rule').on('click',function(){
@@ -505,6 +503,10 @@ $(document).ready(function () {
         $('.phdisplay').hide();
         $('.end').show()
     })
+    // 展示相册页的边框
+    function blingBian() {
+    }
+    
     // 测试
     // 没有关注
     $('.test2').on('click',function(){

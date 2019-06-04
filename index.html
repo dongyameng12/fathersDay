@@ -66,9 +66,15 @@
             $('.loader_info').html('Loading ' + (parseInt(percentT)) + '%');
             $('.loader_progress')[0].style.width = percentT + '%';
             if (percentage == 1) {
+                var  isLoading = localStorage.getItem('firstLoading')
                 setTimeout(function () {
                     $('.loader').remove();
-                    $('.home').show();
+                    if(!isLoading){
+                        $('.home').show();
+                        login();
+                    }else{
+                        $('.end').show();
+                    }
                     $('#musicMenu').addClass('move').show();
                     music.play();
                 }, 1000);
@@ -124,7 +130,7 @@
         </div>
         <div>
             <ul class="ph_list">
-                <li></li>
+                <li class="bling"></li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -183,7 +189,7 @@
             </div>
             <div class="last_02 reset_list"></div>
         </div>
-        
+        <a href="Javascript:void(0);" class="finish">结束</a>
     </section>
     <!-- 结束页 -->
     <section class="end">
@@ -357,6 +363,17 @@
         $('.name').on('blur', function () {
             window.scroll(0, 0)
         })
+        // 是否第一次进入
+        var firstLoading = false;
+        function login() {
+            var first_login = localStorage.getItem('firstLoading')
+            if (first_login == null) {
+                localStorage.setItem('firstLoading', true)
+                $('#return').hide()
+            } else {
+                firstLoading = true
+            }
+        }
     </script>
 </body>
 </html>

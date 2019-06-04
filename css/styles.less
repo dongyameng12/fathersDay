@@ -178,6 +178,7 @@ html,body{
                             -moz-transform: rotate(-7deg); /* Firefox */
                             -webkit-transform: rotate(-7deg); /* Safari and Chrome */
                             -o-transform: rotate(-7deg); /* Opera */
+                            
                         }
                         &:nth-child(2){
                             top: .67rem;
@@ -219,6 +220,7 @@ html,body{
                             -webkit-transform: rotate(-8deg); /* Safari and Chrome */
                             -o-transform: rotate(-8deg); /* Opera */
                         }
+                       
                     }
                 }
             }
@@ -254,8 +256,8 @@ html,body{
         >a{
             display: none;
             position: absolute;
-            left: 0;
-            bottom: 1rem;
+            right: 0;
+            top: .2rem;
             z-index: 100;
             width: 1.6rem;
             height: .82rem;
@@ -265,7 +267,8 @@ html,body{
             font-size: .3rem;
             line-height: .63rem;
             box-sizing: border-box;
-            padding-left: .4rem;
+            padding-right: .4rem;
+            text-align: right;
         }
     }
     // 回忆录
@@ -346,6 +349,23 @@ html,body{
                 }
             }
 
+        }
+        >a{
+            display: none;
+            position: absolute;
+            right: 0;
+            top: .2rem;
+            z-index: 100;
+            width: 1.6rem;
+            height: .82rem;
+            background: url(../images/all_btn.png) no-repeat;
+            background-size: cover;
+            color: #fff;
+            font-size: .3rem;
+            line-height: .63rem;
+            box-sizing: border-box;
+            padding-right: .4rem;
+            text-align: right;
         }
     }
     // 结束页
@@ -1198,6 +1218,9 @@ section.mask{
     animation: to-scroll 1s linear 1 normal;
     -webkit-animation: to-scroll 1s linear 1 normal;
 }
+.bling{
+    border: solid 1px red;
+}
 .page{
     background: url('../images/p_bg.png') no-repeat;
     background-size: cover;
@@ -1220,7 +1243,7 @@ section.mask{
         height: 12.06rem;
         background: url('../images/p_02.png') no-repeat;
         background-size: cover;
-        position: absolute;
+        position: fixed;
         bottom: 0;
     }
 } 
@@ -1231,7 +1254,7 @@ section.mask{
         height: 11.46rem;
         background: url('../images/p_03.png') no-repeat;
         background-size: cover;
-        position: absolute;
+        position: fixed;
         bottom: 0;
     }
 } 
@@ -1242,7 +1265,7 @@ section.mask{
         height: 11.15rem;
         background: url('../images/p_04.png') no-repeat;
         background-size: cover;
-        position: absolute;
+        position: fixed;
         right: 0;
         bottom: 0;
     }
@@ -1254,7 +1277,7 @@ section.mask{
         height: 11.50rem;
         background: url('../images/p_05.png') no-repeat;
         background-size: cover;
-        position: absolute;
+        position: fixed;
         right: 0;
         bottom: 0;
     }

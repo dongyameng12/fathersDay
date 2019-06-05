@@ -38,12 +38,12 @@ $(document).ready(function () {
     wx.config({
     });
     wx.ready(function () {
-        function audioAutoPlay(id){
+        function audioAutoPlay(id) {
             var audio = document.getElementById(id),
-                play = function(){
+                play = function () {
                     audio.play();
                     audio.pause();
-                    document.removeEventListener("touchstart",play, false);
+                    document.removeEventListener("touchstart", play, false);
                 };
             audio.play();
             audio.pause();
@@ -51,11 +51,11 @@ $(document).ready(function () {
                 play();
                 music.play();
             }, false);
-            document.addEventListener('YixinJSBridgeReady', function() {
+            document.addEventListener('YixinJSBridgeReady', function () {
                 play();
                 music.play();
             }, false);
-            document.addEventListener("touchstart",play, false);
+            document.addEventListener("touchstart", play, false);
         }
         // music.pause()
         audioAutoPlay('ms1');
@@ -167,7 +167,6 @@ $(document).ready(function () {
         if ($(".flipbook").turn("animating")) {
             currPage()
         } else {
-            resetStyle();
             $('.list').hide()
             $('.last_page').show()
             setTimeout(function () {
@@ -176,13 +175,13 @@ $(document).ready(function () {
         }
     };
     // 点击结束
-    $('.finish').on('click',function(){
+    $('.finish').on('click', function () {
         $('.last_page').hide()
-        $('.end').show()   
+        $('.end').show()
     })
     // 当前页内容的效果
     function currPage() {
-        $(".flipbook").bind("turned",function (event,page,view) {
+        $(".flipbook").bind("turned", function (event, page, view) {
             pageEffect(page)
         })
     }
@@ -192,23 +191,20 @@ $(document).ready(function () {
         pageEffect(index)
     }
     // 翻页end
-    
+
     // 当前页效果
-    function pageEffect (current_page) {
+    function pageEffect(current_page) {
         if (current_page == 1) {
-            // console.log('1')
             ms1.play();
         } else if (current_page == 2) {
-            // console.log('2') 
             ms3.play();
         } else if (current_page == 3) {
-            console.log('3') 
+            console.log('3')
         } else if (current_page == 4) {
-            console.log('4')  
+            console.log('4')
         } else if (current_page == 5) {
-            if (!firstLoading){
+            if (!firstLoading) {
                 setTimeout(function () {
-                    resetStyle()
                     $('.list').hide()
                     $('.last_page').show()
                     setTimeout(function () {
@@ -218,14 +214,14 @@ $(document).ready(function () {
                             $('.end').show()
                         }, 6500)
                     }, 1000)
-                }, 2000) 
+                }, 2000)
             }
         }
     }
-  
+
     // 首页翻书
     count_number = 0
-    function flipbook () {
+    function flipbook() {
         var bgCounter = 0,
             backgrounds = [
                 "images/homex_02.png",
@@ -239,19 +235,19 @@ $(document).ready(function () {
             if (count_number == 0) {
                 bgCounter++
                 if (bgCounter == 3) {
-                    count_number++ 
-                    setTimeout(function(){
+                    count_number++
+                    setTimeout(function () {
                         $('.home').hide();
                         if (firstLoading) {
+                            blingBian()
                             $('#play_memories').removeClass('bScale');
                             $('#tiaoguo').show()
                             againEnter()
-                        }else{
+                        } else {
                             $('#play_memories').addClass('bScale');
                         }
                         $('.phdisplay').show();
-                        blingBian()
-                    },800)
+                    }, 800)
                 } else {
                     setTimeout(changeBackground, 400);
                 }
@@ -261,45 +257,50 @@ $(document).ready(function () {
     };
     // 开启回忆
     $('#start_memories').on('click', function () {
-        flipbook ();
+        resetStyle()
+        flipbook();
     });
     //照片展示(播放回忆) 
     $('#play_memories').on('click', function () {
         $('.phdisplay').hide();
         if (!firstLoading) {
             time_auto();
-        }else{
-          $('#return').show();
+        } else {
+            $('#return').show();
         }
         playMusic();
         $('.list').show();
         currPage();
     })
     // 照片展示（点击所有的照片跳转到对应场景）
-    function againEnter(){
-        $('.ph_list li').each(function(){
-            $(this).click(function() {
+    function againEnter() {
+        $('.ph_list li').each(function () {
+            $(this).click(function () {
                 var ph_index = $(this).index();
                 $('.phdisplay').hide();
                 $('#return').show();
-                playMusic ();
+                playMusic();
                 $('.list').show();
-                jumpPage(ph_index+1);
+                jumpPage(ph_index + 1);
             })
         });
     }
     // 回忆录中的上一页和下一页
-    $('.prev').on('click',function(){
+    $('.prev').on('click', function () {
         $('.list').hide()
         $('.phdisplay').show()
     })
-    $('.next').on('click',function(){
+    $('.next').on('click', function () {
+        var current_page = $(".flipbook").turn("page")
+        if (current_page == 5) {
+            // resetStyle()
+        }
         next_page();
     })
     // 结束页
     // 送她520MB
-    $('#givebtn').on('click',function(){
-        if ( $('#givebtn').hasClass('allget_btn')) {
+    $('#givebtn').on('click', function () {
+        if ($('#givebtn').hasClass('allget_btn')) {
             // 查看
             jiangli();
         } else {
@@ -310,31 +311,30 @@ $(document).ready(function () {
                 isbtn = true
                 jiangli();
             } else {
-               alert('请输入正确的北京移动号');
-               $('#inputTel').val('') 
-            }     
+                alert('请输入正确的北京移动号');
+                $('#inputTel').val('')
+            }
         }
-      
+
     });
- 
+
     // 点击再看相册
-    $('#again_look').on('click',function(){
+    $('#again_look').on('click', function () {
         firstLoading = localStorage.getItem('firstLoading')
         $('.end').hide();
-        resetStyle()
         $('#change').css('background-image', 'url(./images/homex_01.png)');
         // 重置首页
         count_number = 0;
         // 重置第一个场景
-        $(".flipbook").turn("page",1);
+        $(".flipbook").turn("page", 1);
         $('.home').show();
     });
     //点击礼盒
-    $('#main_share').on('click',function(){
-        ishare?jiangli(): $('.share').show()
+    $('#main_share').on('click', function () {
+        ishare ? jiangli() : $('.share').show()
     })
     // 关闭分享(测试用)
-    $('.share').on('click',function(){
+    $('.share').on('click', function () {
         isbtn = false;
         ishare = true;
         $('.share').hide()
@@ -346,20 +346,20 @@ $(document).ready(function () {
             // 已关注
             if (binding) {
                 showMask();
-                if(isbtn){
-                $('#givebtn').hasClass('allget_btn')?$('.tc_02').show():$('.tc_01').show()
-                }else{
+                if (isbtn) {
+                    $('#givebtn').hasClass('allget_btn') ? $('.tc_02').show() : $('.tc_01').show()
+                } else {
                     // 本网
-                    if(CM){
+                    if (CM) {
                         $('.tc_03').show()
-                    }else{
+                    } else {
                         // 异网
-                        if($('#main_share').hasClass('allget')){
+                        if ($('#main_share').hasClass('allget')) {
                             $('.tc_07').show()
-                        }else{
+                        } else {
                             $('.tc_04').show()
                         }
-                          
+
                     }
                 }
             } else {
@@ -409,52 +409,52 @@ $(document).ready(function () {
     })
     // 点击温馨提示（确认）
     $('#givebtn_02').on('click', function () {
-        $('#givebtn').addClass('allget_btn').css('background-image','url(./images/end_blook.png)') 
+        $('#givebtn').addClass('allget_btn').css('background-image', 'url(./images/end_blook.png)')
         $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
         hideMask();
         $('.tc_02').hide();
     })
     // 异网弹窗2关闭
-    $('.close4').on('click',function(){
+    $('.close4').on('click', function () {
         hideMask();
         // $('#main_share').addClass('cancel')
         $(this).parent().parent().hide();
     })
     // 异网弹窗2
-    $('#givebtn5').on('click',function(){
+    $('#givebtn5').on('click', function () {
         var inputMobile = $('#inputMobile').val();
         if (istel(inputMobile)) {
             $('.tc_05').hide()
             $('.mobile_text').text(inputMobile)
             $('.tc_06').show();
         } else {
-           alert('请输入正确的北京移动号');
-           $('#inputMobile').val('') 
-        } 
+            alert('请输入正确的北京移动号');
+            $('#inputMobile').val('')
+        }
     })
     // 异网弹窗3(修改)
-    $('#reset6').on('click',function(){
+    $('#reset6').on('click', function () {
         $('.tc_06').hide();
         $('.tc_05').show();
     })
-     // 异网弹窗3(确认)
-     $('#givebtn6').on('click',function(){
+    // 异网弹窗3(确认)
+    $('#givebtn6').on('click', function () {
         $('.tc_06').hide();
         $('.tc_07').show();
     })
     // 异网弹窗4
-    $('#close7').on('click',function(){
+    $('#close7').on('click', function () {
         $('#main_share').addClass('allget')
         $(this).parent().hide();
         hideMask()
     })
     // 异网弹窗4（确认）
-    $('#givebtn4').on('click',function(){
-        increase = true;  
+    $('#givebtn4').on('click', function () {
+        increase = true;
         TransGive()
     })
     // 点击关闭
-    $('.close').on('click',function(){
+    $('.close').on('click', function () {
         hideMask();
         $(this).parent().hide();
     })
@@ -469,74 +469,92 @@ $(document).ready(function () {
         }
         return rtn;
     }
+    // 动效
     // 合上相册
-    function endClose (){
+    function endClose() {
         $('#last_first').removeClass('rotateInDownRight')
-        setTimeout(cludeChangeImg(),3000)
+        setTimeout(cludeChangeImg(), 3000)
     }
-    function cludeChangeImg () {
-        $('.last_img').animate({width:"4.9rem",height:'5.58rem',opacity:'0',left:'0',right:'0',filter:'alpha(opacity=0)'},1500,function(){
-            $('#last_first').css('display','none')
-            $('.last_01').delay(1000).animate({opacity:'1'},'slow')
-            $('.last_02').delay(2000).animate({opacity:'1'},"slow")
-            $('.last_03').delay(3000).animate({opacity:'1'},"slow",function(){
-                if (firstLoading) {
-                    $('.finish').show()
-                }
+    function cludeChangeImg() {
+        $('.last_img').animate({ width: "4.9rem", height: '5.58rem', opacity: '0', left: '0', right: '0', filter: 'alpha(opacity=0)' }, 1500, function () {
+            $('#last_first').css('display', 'none')
+            $('.last_01').stop().animate({ opacity: '1' }, 'slow',function(){
+                $('.last_02').stop().animate({ opacity: '1' }, "slow",function(){
+                    $('.last_03').stop().animate({ opacity: '1' }, "slow",function(){
+                        if (firstLoading) {
+                            $('.finish').show()
+                        }  
+                    })
+                })
             })
         })
     }
-     // 重置合上相册的初始样式
-     function resetStyle(){
-        $('.reset_list').css('opacity','0')
-        $('.last_img').css({'opacity':'1','width':'9rem','height':'12rem','left':'-1.3rem'})
-        $('#last_first').css('display','block')
+    // 重置合上相册的初始样式
+    function resetStyle() {
+        $('.reset_list').css('opacity', '0')
+        $('.last_img').css({ 'opacity': '1', 'width': '9rem', 'height': '12rem', 'left': '-1.3rem' })
+        $('#last_first').css('display', 'block')
         $('.finish').hide()
     }
+    // 展示相册页的边框
+    function blingBian() {
+        $('.ph_list>li:eq(0)').addClass('bling')
+        function nextling() {
+            setTimeout(function () {
+                var index = $('.bling').next('li').index()
+                $('.ph_list li').attr('class', '')
+                if (index > 0) {
+                    $('.ph_list>li:eq(' + index + ')').addClass('bling')
+                    return nextling()
+                } else {
+                    return blingBian()
+                }
+            }, 2000)
+        }
+        nextling()
+    }
     // 活动规则
-    $('.rule').on('click',function(){
+    $('.rule').on('click', function () {
         showMask();
         $('.tc_rule').show();
     })
     // 点击跳过
-    $('#tiaoguo').on('click',function(){
+    $('#tiaoguo').on('click', function () {
         $('.phdisplay').hide();
         $('.end').show()
     })
-    // 展示相册页的边框
-    function blingBian() {
-    }
-    
+
+
     // 测试
     // 没有关注
-    $('.test2').on('click',function(){
-        $('.test2').css('color','red');
+    $('.test2').on('click', function () {
+        $('.test2').css('color', 'red');
         attention = false;
     });
-      // 没有绑定
-    $('.test3').on('click',function(){
-        $('.test3').css('color','red');
-        binding = false;    
+    // 没有绑定
+    $('.test3').on('click', function () {
+        $('.test3').css('color', 'red');
+        binding = false;
     });
     // 恢复首次登录
-    $('.test4').on('click',function(){
-        $('.test4').css('color','red');
+    $('.test4').on('click', function () {
+        $('.test4').css('color', 'red');
         localStorage.clear()
-        window.location.href="index.html?time="+((new Date()).getTime());
+        window.location.href = "index.html?time=" + ((new Date()).getTime());
     });
     // 异网
-    $('.test5').on('click',function(){
-        $('.test5').css('color','red');
-        CM = false;    
+    $('.test5').on('click', function () {
+        $('.test5').css('color', 'red');
+        CM = false;
     });
 });
-function playMusic (){
+function playMusic() {
     // 播放
     $('#musicMenu').addClass('move');
     $('#musicMenu').show();
     music.play();
 }
-function pauseMusic (){
+function pauseMusic() {
     // 暂停
     $('#musicMenu').hide();
     $('#musicMenu').removeClass('move');

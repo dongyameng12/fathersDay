@@ -402,6 +402,8 @@ body section.last_page > div:nth-child(2) > div:nth-child(3) {
   height: 1.86rem;
   background-size: cover;
   margin: .6rem auto .6rem;
+  position: relative;
+  z-index: 2;
 }
 html section.last_page > div:nth-child(2) > div:nth-child(4),
 body section.last_page > div:nth-child(2) > div:nth-child(4) {
@@ -1339,38 +1341,28 @@ body section.mask {
   height: 11.24rem;
   background: url('../images/p_01.png') no-repeat;
   background-size: cover;
-  position: fixed;
-  bottom: 0;
 }
 .p2 > p {
   width: 7.5rem;
   height: 12.06rem;
   background: url('../images/p_02.png') no-repeat;
   background-size: cover;
-  position: fixed;
-  bottom: 0;
 }
 .p3 > p {
   width: 7.5rem;
   height: 11.14rem;
   background: url('../images/p_03.png') no-repeat;
   background-size: cover;
-  position: fixed;
-  bottom: 0;
 }
 .p4 > p {
   width: 7.50rem;
   height: 10.84rem;
   background: url('../images/p_04.png') no-repeat;
   background-size: cover;
-  position: fixed;
-  bottom: 0;
 }
 .p5 > p {
   width: 7.5rem;
   height: 11.21rem;
   background: url('../images/p_05.png') no-repeat;
   background-size: cover;
-  position: fixed;
-  bottom: 0;
 }

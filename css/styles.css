@@ -1340,7 +1340,7 @@ body section.mask {
   background: url('../images/p_01.png') no-repeat;
   background-size: cover;
   position: fixed;
-  bottom: 1.28rem;
+  bottom: 0;
 }
 .p2 > p {
   width: 7.5rem;
@@ -1348,7 +1348,7 @@ body section.mask {
   background: url('../images/p_02.png') no-repeat;
   background-size: cover;
   position: fixed;
-  bottom: 1.28rem;
+  bottom: 0;
 }
 .p3 > p {
   width: 7.5rem;
@@ -1356,7 +1356,7 @@ body section.mask {
   background: url('../images/p_03.png') no-repeat;
   background-size: cover;
   position: fixed;
-  bottom: 1.28rem;
+  bottom: 0;
 }
 .p4 > p {
   width: 7.50rem;
@@ -1364,7 +1364,7 @@ body section.mask {
   background: url('../images/p_04.png') no-repeat;
   background-size: cover;
   position: fixed;
-  bottom: 1.28rem;
+  bottom: 0;
 }
 .p5 > p {
   width: 7.5rem;
@@ -1372,5 +1372,5 @@ body section.mask {
   background: url('../images/p_05.png') no-repeat;
   background-size: cover;
   position: fixed;
-  bottom: 1.28rem;
+  bottom: 0;
 }

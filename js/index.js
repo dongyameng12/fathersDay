@@ -369,11 +369,12 @@ $(document).ready(function () {
                     } else {
                         // 异网
                         if ($('#main_share').hasClass('allget')) {
-                             // 异网用户分享：无限卡 
-                        $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
-                        $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
+                      
                             $('.tc_07').show()
                         } else {
+                        // 异网用户分享：无限卡 
+                            $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
+                            $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
                             $('.tc_04').show()
                         }
 

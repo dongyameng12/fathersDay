@@ -10,8 +10,10 @@ $(document).ready(function () {
     // 本网，异网判断（本网）
     var CM = true;
     // 链接
-    var data_left = parseInt(Math.random() * 3);
-    var data_li = parseInt(Math.random() * 3);
+    // var data_left = parseInt(Math.random() * 3);
+    var data_left =1
+    // var data_li = parseInt(Math.random() * 3);
+    var data_li = 1;
     // 用于按钮弹窗，还是点击礼盒（默认按钮）
     var isbtn = true
     //是否分享（没分享）

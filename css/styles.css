@@ -101,8 +101,8 @@ body section.home > div:nth-child(2) {
 }
 html section.home > div:nth-child(2) > div:nth-child(1),
 body section.home > div:nth-child(2) > div:nth-child(1) {
-  width: 7.37rem;
-  height: 8.94rem;
+  width: 7.41rem;
+  height: 8.57rem;
   background: url('../images/homex_01.png') no-repeat;
   background-size: cover;
 }
@@ -136,7 +136,7 @@ body section.home > div:nth-child(3) {
   z-index: 100;
   left: 0;
   right: 0;
-  top: -0.95rem;
+  top: -0.41rem;
   margin: auto;
 }
 html section.home > div:nth-child(4),
@@ -162,15 +162,31 @@ body section.phdisplay > div:nth-child(1) {
 }
 html section.phdisplay > div:nth-child(1) > div,
 body section.phdisplay > div:nth-child(1) > div {
+  z-index: 1;
+}
+html section.phdisplay > div:nth-child(1) > div.first_title,
+body section.phdisplay > div:nth-child(1) > div.first_title {
   position: absolute;
-  top: .28rem;
+  top: .52rem;
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 1;
   width: 5.5rem;
   height: 2.63rem;
   background: url('../images/home_title.png') no-repeat;
+  background-size: cover;
+}
+html section.phdisplay > div:nth-child(1) > div.second_title,
+body section.phdisplay > div:nth-child(1) > div.second_title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 6.07rem;
+  height: 1.64rem;
+  background: url('../images/home_title_01.png') no-repeat;
   background-size: cover;
 }
 html section.phdisplay > div:nth-child(2),
@@ -380,7 +396,11 @@ body section.last_page > div:nth-child(2) > div > p {
 }
 html section.last_page > div:nth-child(2) > div:nth-child(3),
 body section.last_page > div:nth-child(2) > div:nth-child(3) {
-  color: #b63f0a;
+  background: url('../images/p_06.png') no-repeat;
+  width: 5.04rem;
+  height: 1.86rem;
+  background-size: cover;
+  margin: .84rem auto .76rem;
 }
 html section.last_page > div:nth-child(2) > div:nth-child(4),
 body section.last_page > div:nth-child(2) > div:nth-child(4) {
@@ -596,7 +616,7 @@ body section.share > div {
 html section.tc,
 body section.tc {
   position: fixed;
-  top: 1.8rem;
+  top: 1.24rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -646,8 +666,8 @@ body section.tc.tc_rule > a {
 html section.tc.tc_01,
 body section.tc.tc_01 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -656,18 +676,13 @@ body section.tc.tc_01 {
 html section.tc.tc_01 > div:nth-child(1),
 body section.tc.tc_01 > div:nth-child(1) {
   position: absolute;
-  top: .84rem;
+  top: 1.5rem;
   left: 0;
   right: 0;
   margin: auto;
   width: 3.95rem;
-  height: 4.28rem;
   box-sizing: border-box;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
   color: #6d5744;
 }
 html section.tc.tc_01 > div:nth-child(1) > div:nth-child(1),
@@ -683,6 +698,10 @@ body section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) {
   font-size: .3rem;
   margin: .6rem auto .38rem;
 }
+html section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p,
+body section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p {
+  line-height: .5rem;
+}
 html section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p > span,
 body section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p > span {
   color: #f35504;
@@ -694,13 +713,13 @@ body section.tc.tc_01 > div:nth-child(1) > div:nth-child(3) {
 html section.tc.tc_01 > div:nth-child(2),
 body section.tc.tc_01 > div:nth-child(2) {
   position: absolute;
-  bottom: .6rem;
+  bottom: .35rem;
   left: 0;
   right: 0;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  width: 3.66rem;
+  width: 4rem;
 }
 html section.tc.tc_01 > div:nth-child(2) > a,
 body section.tc.tc_01 > div:nth-child(2) > a {
@@ -723,8 +742,8 @@ body section.tc.tc_01 > div:nth-child(2) > a:nth-child(2) {
 html section.tc.tc_02,
 body section.tc.tc_02 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -733,15 +752,15 @@ body section.tc.tc_02 {
 html section.tc.tc_02 > div,
 body section.tc.tc_02 > div {
   position: absolute;
-  top: 1.52rem;
+  top: 1.48rem;
   left: 0;
   right: 0;
   margin: auto;
-  width: 3.95rem;
-  height: 4.28rem;
+  width: 4.7rem;
+  height: 5.31rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   text-align: center;
 }
 html section.tc.tc_02 > div > div:nth-child(1),
@@ -760,14 +779,16 @@ body section.tc.tc_02 > div > div:nth-child(2) {
 html section.tc.tc_02 > div > a,
 body section.tc.tc_02 > div > a {
   display: inline-block;
-  width: 3.95rem;
-  height: 1.09rem;
+  width: 4.7rem;
+  height: 1.94rem;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #5656f1;
 }
 html section.tc.tc_02 > a,
 body section.tc.tc_02 > a {
   position: absolute;
-  bottom: .6rem;
+  bottom: .3rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -782,8 +803,8 @@ body section.tc.tc_03,
 html section.tc.tc_07,
 body section.tc.tc_07 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -799,11 +820,11 @@ body section.tc.tc_07 > div {
   left: 0;
   right: 0;
   margin: auto;
-  width: 3.95rem;
-  height: 4.28rem;
+  width: 4.7rem;
+  height: 5.32rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   text-align: center;
 }
 html section.tc.tc_03 > div > p:nth-child(3) > span,
@@ -816,7 +837,7 @@ html section.tc.tc_03 > div > p:nth-child(4),
 body section.tc.tc_03 > div > p:nth-child(4),
 html section.tc.tc_07 > div > p:nth-child(4),
 body section.tc.tc_07 > div > p:nth-child(4) {
-  margin-top: .77rem;
+  margin-top: .67rem;
 }
 html section.tc.tc_03 > div > p:nth-child(4),
 body section.tc.tc_03 > div > p:nth-child(4),
@@ -837,8 +858,10 @@ body section.tc.tc_03 > div > a,
 html section.tc.tc_07 > div > a,
 body section.tc.tc_07 > div > a {
   display: inline-block;
-  width: 3.95rem;
-  height: 1.09rem;
+  width: 4.7rem;
+  height: 1.94rem;
+  background-size: cover;
+  background-repeat: no-repeat;
   background: #a9baff;
   margin-top: .37rem;
 }
@@ -846,22 +869,39 @@ html section.tc.tc_03 > a,
 body section.tc.tc_03 > a,
 html section.tc.tc_07 > a,
 body section.tc.tc_07 > a {
+  display: inline-block;
+}
+html section.tc.tc_03 > a:nth-child(1),
+body section.tc.tc_03 > a:nth-child(1),
+html section.tc.tc_07 > a:nth-child(1),
+body section.tc.tc_07 > a:nth-child(1) {
   position: absolute;
-  bottom: .6rem;
+  right: .48rem;
+  top: -0.3rem;
+  width: .65rem;
+  height: .65rem;
+  background: url('../images/close.png') no-repeat;
+  background-size: cover;
+}
+html section.tc.tc_03 > a:nth-child(3),
+body section.tc.tc_03 > a:nth-child(3),
+html section.tc.tc_07 > a:nth-child(3),
+body section.tc.tc_07 > a:nth-child(3) {
+  position: absolute;
+  bottom: .3rem;
   left: 0;
   right: 0;
   margin: auto;
-  display: inline-block;
   width: 2.24rem;
   height: .71rem;
-  background: url('../images/tc_tj.png') no-repeat;
+  background: url('../images/tc_sure.png') no-repeat;
   background-size: cover;
 }
 html section.tc.tc_04,
 body section.tc.tc_04 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -872,21 +912,10 @@ html section.tc.tc_04 > div,
 body section.tc.tc_04 > div {
   margin: 0 auto;
 }
-html section.tc.tc_04 > div:nth-child(1) > p,
-body section.tc.tc_04 > div:nth-child(1) > p {
-  position: absolute;
-  top: -0.3rem;
-  right: 0;
-  width: .6rem;
-  height: .6rem;
-  background: url('../images/close.png') no-repeat;
-  background-size: cover;
-  z-index: 100;
-}
 html section.tc.tc_04 > div:nth-child(2),
 body section.tc.tc_04 > div:nth-child(2) {
   position: absolute;
-  top: 1.52rem;
+  top: 1.82rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -896,25 +925,29 @@ body section.tc.tc_04 > div:nth-child(2) {
   flex-direction: column;
   text-align: center;
 }
+html section.tc.tc_04 > div:nth-child(2) > p,
+body section.tc.tc_04 > div:nth-child(2) > p {
+  line-height: .5rem;
+}
 html section.tc.tc_04 > div:nth-child(2) > p:nth-child(3) span,
 body section.tc.tc_04 > div:nth-child(2) > p:nth-child(3) span {
   color: #f35504;
 }
 html section.tc.tc_04 > div:nth-child(2) > p:nth-child(6),
 body section.tc.tc_04 > div:nth-child(2) > p:nth-child(6) {
-  font-size: .2rem;
+  font-size: .28rem;
   margin: .5rem 0 .38rem;
 }
 html section.tc.tc_04 > div:nth-child(3),
 body section.tc.tc_04 > div:nth-child(3) {
-  margin: auto;
   position: absolute;
+  bottom: .35rem;
   left: 0;
   right: 0;
-  bottom: .6rem;
-  width: 3.77rem;
+  margin: auto;
   display: flex;
   justify-content: space-between;
+  width: 4rem;
 }
 html section.tc.tc_04 > div:nth-child(3) > a,
 body section.tc.tc_04 > div:nth-child(3) > a {
@@ -932,11 +965,21 @@ html section.tc.tc_04 > div:nth-child(3) > a:nth-child(2),
 body section.tc.tc_04 > div:nth-child(3) > a:nth-child(2) {
   background-image: url('../images/tc_cgive.png');
 }
+html section.tc.tc_04 > a,
+body section.tc.tc_04 > a {
+  position: absolute;
+  right: .48rem;
+  top: -0.3rem;
+  width: .65rem;
+  height: .65rem;
+  background: url('../images/close.png') no-repeat;
+  background-size: cover;
+}
 html section.tc.tc_05,
 body section.tc.tc_05 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -947,20 +990,10 @@ html section.tc.tc_05 > div,
 body section.tc.tc_05 > div {
   margin: 0 auto;
 }
-html section.tc.tc_05 > div:nth-child(1) > p,
-body section.tc.tc_05 > div:nth-child(1) > p {
-  position: absolute;
-  top: -0.3rem;
-  right: 0;
-  width: .6rem;
-  height: .6rem;
-  background: url('../images/close.png') no-repeat;
-  background-size: cover;
-}
 html section.tc.tc_05 > div:nth-child(2),
 body section.tc.tc_05 > div:nth-child(2) {
   position: absolute;
-  top: 1.52rem;
+  top: 1.82rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -970,11 +1003,15 @@ body section.tc.tc_05 > div:nth-child(2) {
   flex-direction: column;
   text-align: center;
 }
+html section.tc.tc_05 > div:nth-child(2) > p,
+body section.tc.tc_05 > div:nth-child(2) > p {
+  line-height: .5rem;
+}
 html section.tc.tc_05 > div:nth-child(2) > p:nth-child(3),
 body section.tc.tc_05 > div:nth-child(2) > p:nth-child(3) {
-  font-size: .24rem;
-  margin: .5rem auto .72rem;
-  width: 3.54rem;
+  font-size: .28rem;
+  margin: .5rem auto .5rem;
+  width: 3.7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -991,12 +1028,22 @@ body section.tc.tc_05 > div:nth-child(2) > p:nth-child(3) > input {
 }
 html section.tc.tc_05 > div:nth-child(2) > p:nth-child(4),
 body section.tc.tc_05 > div:nth-child(2) > p:nth-child(4) {
-  font-size: .2rem;
+  font-size: .28rem;
 }
-html section.tc.tc_05 > a,
-body section.tc.tc_05 > a {
+html section.tc.tc_05 > a:nth-child(1),
+body section.tc.tc_05 > a:nth-child(1) {
   position: absolute;
-  bottom: .6rem;
+  right: .48rem;
+  top: -0.3rem;
+  width: .65rem;
+  height: .65rem;
+  background: url('../images/close.png') no-repeat;
+  background-size: cover;
+}
+html section.tc.tc_05 > a:nth-child(3),
+body section.tc.tc_05 > a:nth-child(3) {
+  position: absolute;
+  bottom: .3rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -1009,30 +1056,29 @@ body section.tc.tc_05 > a {
 html section.tc.tc_06,
 body section.tc.tc_06 {
   display: none;
-  width: 5.56rem;
-  height: 7.2rem;
+  width: 6.61rem;
+  height: 8.09rem;
   background: url('../images/tc_bg.png') no-repeat;
   background-size: cover;
   margin: 0 auto;
   color: #6d5744;
+  font-size: .3rem;
 }
 html section.tc.tc_06 > div:nth-child(1),
 body section.tc.tc_06 > div:nth-child(1) {
   position: absolute;
-  top: .84rem;
+  top: 1.82rem;
   left: 0;
   right: 0;
   margin: auto;
-  width: 3.95rem;
   height: 4.28rem;
-  box-sizing: border-box;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  color: #6d5744;
-  font-size: .3rem;
+  text-align: center;
+}
+html section.tc.tc_06 > div:nth-child(1) > p,
+body section.tc.tc_06 > div:nth-child(1) > p {
+  line-height: .5rem;
 }
 html section.tc.tc_06 > div:nth-child(1) > p:nth-child(2) > span,
 body section.tc.tc_06 > div:nth-child(1) > p:nth-child(2) > span {
@@ -1040,19 +1086,19 @@ body section.tc.tc_06 > div:nth-child(1) > p:nth-child(2) > span {
 }
 html section.tc.tc_06 > div:nth-child(1) > p:nth-child(5),
 body section.tc.tc_06 > div:nth-child(1) > p:nth-child(5) {
-  font-size: .2rem;
+  font-size: .28rem;
   margin: .5rem auto;
 }
 html section.tc.tc_06 > div:nth-child(2),
 body section.tc.tc_06 > div:nth-child(2) {
   position: absolute;
-  bottom: .6rem;
+  bottom: .3rem;
   left: 0;
   right: 0;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  width: 3.66rem;
+  width: 4rem;
 }
 html section.tc.tc_06 > div:nth-child(2) > a,
 body section.tc.tc_06 > div:nth-child(2) > a {
@@ -1276,7 +1322,7 @@ body section.mask {
   -webkit-animation: to-scroll 1s linear 1 normal;
 }
 .bling {
-  box-shadow: 1px 0px 10px 2px #fce622;
+  box-shadow: 1px 0px 10px 4px #e69944;
 }
 .page {
   background: url('../images/p_bg.png') no-repeat;
@@ -1284,14 +1330,14 @@ body section.mask {
 }
 .p1 > p {
   width: 7.5rem;
-  height: 11.16rem;
+  height: 11.24rem;
   background: url('../images/p_01.png') no-repeat;
   background-size: cover;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .p2 > p {
-  width: 6.49rem;
+  width: 7.5rem;
   height: 12.06rem;
   background: url('../images/p_02.png') no-repeat;
   background-size: cover;
@@ -1299,28 +1345,26 @@ body section.mask {
   bottom: 0;
 }
 .p3 > p {
-  width: 6.79rem;
-  height: 11.46rem;
+  width: 7.5rem;
+  height: 11.14rem;
   background: url('../images/p_03.png') no-repeat;
   background-size: cover;
   position: fixed;
   bottom: 0;
 }
 .p4 > p {
-  width: 7.03rem;
-  height: 11.15rem;
+  width: 7.50rem;
+  height: 10.84rem;
   background: url('../images/p_04.png') no-repeat;
   background-size: cover;
   position: fixed;
-  right: 0;
   bottom: 0;
 }
 .p5 > p {
-  width: 7.05rem;
-  height: 11.50rem;
+  width: 7.5rem;
+  height: 11.21rem;
   background: url('../images/p_05.png') no-repeat;
   background-size: cover;
   position: fixed;
-  right: 0;
   bottom: 0;
 }

@@ -85,8 +85,8 @@ html,body{
                 top: -.32rem;
                 >div{
                     &:nth-child(1){
-                        width:7.37rem;
-                        height:8.94rem;
+                        width:7.41rem;
+                        height:8.57rem;
                         background: url('../images/homex_01.png') no-repeat;
                         background-size: cover;
                     }
@@ -121,7 +121,7 @@ html,body{
                 z-index: 100;
                 left: 0;
                 right: 0;
-                top: -0.95rem;
+                top: -0.41rem;
                 margin: auto;
             }
             &:nth-child(4){
@@ -146,16 +146,30 @@ html,body{
                 background-size: cover;
                 position: relative;
                 >div{
-                    position: absolute;
-                    top: .28rem;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
                     z-index: 1;
-                    width: 5.5rem;
-                    height: 2.63rem;
-                    background: url('../images/home_title.png') no-repeat;
-                    background-size: cover;
+                    &.first_title{
+                        position: absolute;
+                        top: .52rem;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 5.5rem;
+                        height: 2.63rem;
+                        background: url('../images/home_title.png') no-repeat;
+                        background-size: cover;
+                    }
+                    &.second_title{
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 6.07rem;
+                        height:1.64rem;
+                        background: url('../images/home_title_01.png') no-repeat;
+                        background-size: cover;    
+                    }
                 }
             }
             &:nth-child(2){
@@ -337,7 +351,11 @@ html,body{
                         line-height: .7rem;
                     }
                     &:nth-child(3){
-                        color: #b63f0a;
+                        background: url('../images/p_06.png') no-repeat;
+                        width: 5.04rem;
+                        height: 1.86rem;
+                        background-size: cover;
+                        margin: .84rem auto .76rem;
                     }
                     &:nth-child(4){
                         width: 3.13rem;
@@ -548,7 +566,7 @@ html,body{
     // 弹窗
     section.tc{
         position: fixed;
-        top: 1.8rem;
+        top: 1.24rem;
         left: 0;
         right: 0;
         margin: auto;
@@ -595,8 +613,8 @@ html,body{
         // 信息确认
         &.tc_01{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
@@ -604,18 +622,13 @@ html,body{
             >div{
                 &:nth-child(1){
                     position: absolute;
-                    top: .84rem;
+                    top: 1.5rem;
                     left: 0;
                     right: 0;
                     margin:auto;
                     width: 3.95rem;
-                    height: 4.28rem;
                     box-sizing: border-box;
                     text-align: center;
-                    display: flex;
-                    flex-direction: column;
-                    align-content: center;
-                    justify-content: center;
                     color: #6d5744; 
                     >div{
                         &:nth-child(1){
@@ -629,6 +642,7 @@ html,body{
                             font-size: .3rem;
                             margin: .6rem auto .38rem;
                             >p{
+                                line-height: .5rem;
                                 >span{
                                     color: #f35504;
                                 }
@@ -641,13 +655,13 @@ html,body{
                 }
                 &:nth-child(2){
                     position: absolute;
-                    bottom: .6rem;
+                    bottom: .35rem;
                     left: 0;
                     right: 0;
                     margin:auto;
                     display: flex;
                     justify-content: space-between;
-                    width: 3.66rem;
+                    width: 4rem;
                     >a{
                         display: inline-block;
                         &:nth-child(1){
@@ -669,23 +683,23 @@ html,body{
         // 温馨提示
         &.tc_02{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
             color: #6d5744;
             >div{
                 position: absolute;
-                top: 1.52rem;
+                top: 1.48rem;
                 left:0;
                 right: 0;
                 margin:auto;
-                width: 3.95rem;
-                height: 4.28rem;
+                width: 4.7rem;
+                height: 5.31rem;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: space-between;
                 text-align: center;
                 >div{
                     &:nth-child(1){
@@ -704,30 +718,32 @@ html,body{
                 }
                 >a{
                     display: inline-block;
-                    width: 3.95rem;
-                    height: 1.09rem;
+                    width: 4.7rem;
+                    height: 1.94rem;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     background-color: rgb(86, 86, 241);
                 }
             }
            >a{
-                position: absolute;
-                bottom: .6rem;
-                left: 0;
-                right: 0;
-                margin:auto;
-                display: inline-block;
-                width: 2.24rem;
-                height:.71rem;
-                background: url('../images/tc_sure.png') no-repeat;
-                background-size: cover; 
-              
+               display: inline-block;
+               position: absolute;
+               bottom: .3rem;
+               left: 0;
+               right: 0;
+               margin:auto;
+               display: inline-block;
+               width: 2.24rem;
+               height:.71rem;
+               background: url('../images/tc_sure.png') no-repeat;
+               background-size: cover;
            }
         }
         // 本网弹窗
         &.tc_03,&.tc_07{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
@@ -739,11 +755,11 @@ html,body{
                 left:0;
                 right: 0;
                 margin:auto;
-                width: 3.95rem;
-                height: 4.28rem;
+                width: 4.7rem;
+                height: 5.32rem;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: space-between;
                 text-align: center;
                 >p{
                     &:nth-child(3){
@@ -752,7 +768,7 @@ html,body{
                         }
                     }
                     &:nth-child(4){
-                        margin-top: .77rem;
+                        margin-top: .67rem;
                     }
                     &:nth-child(4), &:nth-child(5), &:nth-child(6){
                         font-size: .24rem;
@@ -760,30 +776,44 @@ html,body{
                 }
                 >a{
                     display: inline-block;
-                    width: 3.95rem;
-                    height: 1.09rem;
+                     width: 4.7rem;
+                    height: 1.94rem;
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     background: #a9baff;
                     margin-top: .37rem;
                 }
             }
             >a{
-                position: absolute;
-                bottom: .6rem;
-                left: 0;
-                right: 0;
-                margin:auto;
                 display: inline-block;
-                width: 2.24rem;
-                height: .71rem;
-                background: url('../images/tc_tj.png') no-repeat;
-                background-size: cover;
+                &:nth-child(1){
+                    position: absolute;
+                    right: .48rem;
+                    top: -0.3rem;
+                    width: .65rem;
+                    height: .65rem;
+                    background: url('../images/close.png') no-repeat;
+                    background-size: cover;
+                }
+                &:nth-child(3){
+                    position: absolute;
+                    bottom: .3rem;
+                    left: 0;
+                    right: 0;
+                    margin:auto;
+                    width: 2.24rem;
+                    height: .71rem;
+                    background: url('../images/tc_sure.png') no-repeat;
+                    background-size: cover;
+                }
+               
             }
         }
         // 异网弹窗1
         &.tc_04{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
@@ -791,22 +821,9 @@ html,body{
             font-size: .3rem;
             >div{
                 margin: 0 auto;
-                &:nth-child(1){
-                    >p{
-                        position: absolute;
-                        top: -.3rem;
-                        right: 0;
-                        width: .6rem;
-                        height: .6rem;
-                        background: url('../images/close.png') no-repeat;
-                        background-size: cover;
-                        z-index: 100;
-                    }
-                    
-                }
                 &:nth-child(2){
                     position: absolute;
-                    top: 1.52rem;
+                    top: 1.82rem;
                     left:0;
                     right: 0;
                     margin:auto;
@@ -816,26 +833,27 @@ html,body{
                     flex-direction: column;
                     text-align: center;
                     >p{
+                        line-height: .5rem;
                         &:nth-child(3){
                             span{
                                 color: #f35504;    
                             }
                         }
                         &:nth-child(6){
-                            font-size: .2rem;
+                            font-size: .28rem;
                             margin: .5rem 0 .38rem;
                         }
                     }    
                 }
                 &:nth-child(3){
-                    margin: auto;
                     position: absolute;
+                    bottom: .35rem;
                     left: 0;
                     right: 0;
-                    bottom: .6rem;
-                    width: 3.77rem;
+                    margin:auto;
                     display: flex;
                     justify-content: space-between;
+                    width: 4rem;
                     >a{
                         display: inline-block;
                         width: 1.76rem;
@@ -850,13 +868,22 @@ html,body{
                         }
                     }
                 }
+            }
+            >a{
+                position: absolute;
+                right: .48rem;
+                top: -0.3rem;
+                width: .65rem;
+                height: .65rem;
+                background: url('../images/close.png') no-repeat;
+                background-size: cover;
             }    
         }
         // 异网弹窗2
         &.tc_05{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
@@ -864,21 +891,9 @@ html,body{
             font-size: .3rem;
             >div{
                 margin: 0 auto;
-                &:nth-child(1){
-                    >p{
-                        position: absolute;
-                        top: -.3rem;
-                        right: 0;
-                        width: .6rem;
-                        height: .6rem;
-                        background: url('../images/close.png') no-repeat;
-                        background-size: cover;
-                    }
-                  
-                }
                 &:nth-child(2){
                     position: absolute;
-                    top: 1.52rem;
+                    top: 1.82rem;
                     left:0;
                     right: 0;
                     margin:auto;
@@ -888,10 +903,11 @@ html,body{
                     flex-direction: column;
                     text-align: center;
                     >p{
+                        line-height: .5rem;
                         &:nth-child(3){
-                            font-size: .24rem;
-                            margin: .5rem auto .72rem;
-                            width: 3.54rem;
+                            font-size: .28rem;
+                            margin: .5rem auto .5rem;
+                            width: 3.7rem;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
@@ -906,72 +922,80 @@ html,body{
                             }
                         }
                         &:nth-child(4){
-                            font-size: .2rem;
+                            font-size: .28rem;
                         }
                     }
                 }
             } 
             >a{
-                display: inline-block;
-                position: absolute;
-                bottom: .6rem;
-                left: 0;
-                right: 0;
-                margin:auto;
-                display: inline-block;
-                width:1.76rem;
-                height: .71rem;
-                background: url('../images/tc_xsure.png') no-repeat;
-                background-size: cover;
+                &:nth-child(1){
+                    position: absolute;
+                    right: .48rem;
+                    top: -0.3rem;
+                    width: .65rem;
+                    height: .65rem;
+                    background: url('../images/close.png') no-repeat;
+                    background-size: cover;  
+                }
+                &:nth-child(3){
+                    display: inline-block;
+                    position: absolute;
+                    bottom: .3rem;
+                    left: 0;
+                    right: 0;
+                    margin:auto;
+                    display: inline-block;
+                    width:1.76rem;
+                    height: .71rem;
+                    background: url('../images/tc_xsure.png') no-repeat;
+                    background-size: cover;
+                }
+             
             }   
         }
         // 异网弹窗3
         &.tc_06{
             display: none;
-            width: 5.56rem;
-            height:7.2rem;
+            width: 6.61rem;
+            height:8.09rem;
             background: url('../images/tc_bg.png') no-repeat;
             background-size: cover;
             margin: 0 auto;
             color: #6d5744;
+            font-size: .3rem;
             >div{
                 &:nth-child(1){
                     position: absolute;
-                    top: .84rem;
-                    left: 0;
+                    top: 1.82rem;
+                    left:0;
                     right: 0;
                     margin:auto;
-                    width: 3.95rem;
                     height: 4.28rem;
-                    box-sizing: border-box;
-                    text-align: center;
                     display: flex;
                     flex-direction: column;
-                    align-content: center;
-                    justify-content: center;
-                    color: #6d5744; 
-                    font-size: .3rem;
+                    text-align: center;
                     >p{
+                        line-height: .5rem;
                         &:nth-child(2){
                             >span{
                                 color: #f35504;
                             }
                         }
                         &:nth-child(5){
-                            font-size: .2rem;
+                            font-size: .28rem;
                             margin: .5rem auto;
                         }
                     }     
                 }
                 &:nth-child(2){
                     position: absolute;
-                    bottom: .6rem;
+                    bottom: .3rem;
                     left: 0;
                     right: 0;
                     margin:auto;
                     display: flex;
                     justify-content: space-between;
-                    width: 3.66rem;
+                    width: 4rem;
                     >a{
                         display: inline-block;
                         &:nth-child(1){
@@ -1220,7 +1244,7 @@ section.mask{
 }
 // 相框样式
 .bling{
-    box-shadow: 1px 0px 10px 2px #fce622
+    box-shadow: 1px 0px 10px 4px #e69944
 }
 
 .page{
@@ -1231,17 +1255,17 @@ section.mask{
 .p1{
     >p{
         width: 7.5rem;
-        height:11.16rem;
+        height:11.24rem;
         background: url('../images/p_01.png') no-repeat;
         background-size: cover;
-        position: absolute;
+        position: fixed;
         bottom: 0;
     }
 } 
 // 场景2
 .p2{
     >p{
-        width: 6.49rem;
+        width: 7.5rem;
         height: 12.06rem;
         background: url('../images/p_02.png') no-repeat;
         background-size: cover;
@@ -1252,8 +1276,8 @@ section.mask{
 // 场景3
 .p3{
     >p{
-        width: 6.79rem;
-        height: 11.46rem;
+        width: 7.5rem;
+        height: 11.14rem;
         background: url('../images/p_03.png') no-repeat;
         background-size: cover;
         position: fixed;
@@ -1263,24 +1287,22 @@ section.mask{
 // 场景4
 .p4{
     >p{
-        width:7.03rem;
-        height: 11.15rem;
+        width:7.50rem;
+        height: 10.84rem;
         background: url('../images/p_04.png') no-repeat;
         background-size: cover;
         position: fixed;
-        right: 0;
         bottom: 0;
     }
 } 
 // 场景5
 .p5{
     >p{
-        width:7.05rem;
-        height: 11.50rem;
+        width:7.5rem;
+        height: 11.21rem;
         background: url('../images/p_05.png') no-repeat;
         background-size: cover;
         position: fixed;
-        right: 0;
         bottom: 0;
     }
 } 

@@ -10,7 +10,7 @@ $(document).ready(function () {
     // 本网，异网判断（本网）
     var CM = true;
     // 用于按钮弹窗，还是点击礼盒（默认按钮）
-    var isbtn
+    var isbtn = true
     //是否分享（没分享）
     var ishare = false
     //是否转增
@@ -20,20 +20,8 @@ $(document).ready(function () {
     // 定时器变量（为了清除定时器）
     var nextPage;
     // 背景音乐和声音的处理start
-    var music = document.getElementById('music'),
-        ms1 = document.getElementById('ms1'),
-        ms2 = document.getElementById('ms2'),
-        ms3 = document.getElementById('ms3'),
-        ms4 = document.getElementById('ms4'),
-        ms5 = document.getElementById('ms5');
+    var music = document.getElementById('music')
     music.load();
-    ms1.load();
-    ms2.load();
-    ms3.load();
-    ms4.load();
-    ms5.load();
-    // music.play();
-    // music.pause();
     //bgMusic
     wx.config({
     });
@@ -57,12 +45,6 @@ $(document).ready(function () {
             }, false);
             document.addEventListener("touchstart", play, false);
         }
-        // music.pause()
-        audioAutoPlay('ms1');
-        audioAutoPlay('ms2');
-        audioAutoPlay('ms3');
-        audioAutoPlay('ms4');
-        audioAutoPlay('ms5');
     });
     ~function () {
         var musicMenu = document.getElementById('musicMenu'),
@@ -148,7 +130,6 @@ $(document).ready(function () {
     })
     // 首次（定时器控制自动翻页）
     function time_auto() {
-        // ms1.pause();
         nextPage = setInterval(function () {
             next_page();
         }, 3500);
@@ -194,15 +175,7 @@ $(document).ready(function () {
 
     // 当前页效果
     function pageEffect(current_page) {
-        if (current_page == 1) {
-            ms1.play();
-        } else if (current_page == 2) {
-            ms3.play();
-        } else if (current_page == 3) {
-            console.log('3')
-        } else if (current_page == 4) {
-            console.log('4')
-        } else if (current_page == 5) {
+      if (current_page == 5) {
             if (!firstLoading) {
                 setTimeout(function () {
                     $('.list').hide()
@@ -241,10 +214,12 @@ $(document).ready(function () {
                         if (firstLoading) {
                             blingBian()
                             $('#play_memories').removeClass('bScale');
+                            $('#ph_title').addClass('second_title')
                             $('#tiaoguo').show()
                             againEnter()
                         } else {
                             $('#play_memories').addClass('bScale');
+                            $('#ph_title').addClass('first_title')
                         }
                         $('.phdisplay').show();
                     }, 800)
@@ -300,6 +275,7 @@ $(document).ready(function () {
     // 结束页
     // 送她520MB
     $('#givebtn').on('click', function () {
+        isbtn = true
         if ($('#givebtn').hasClass('allget_btn')) {
             // 查看
             jiangli();
@@ -308,7 +284,6 @@ $(document).ready(function () {
             var input_val = $('#inputTel').val();
             if (istel(input_val)) {
                 $('.phone_text').text(input_val);
-                isbtn = true
                 jiangli();
             } else {
                 alert('请输入正确的北京移动号');
@@ -317,7 +292,6 @@ $(document).ready(function () {
         }
 
     });
-
     // 点击再看相册
     $('#again_look').on('click', function () {
         firstLoading = localStorage.getItem('firstLoading')
@@ -331,11 +305,11 @@ $(document).ready(function () {
     });
     //点击礼盒
     $('#main_share').on('click', function () {
+        isbtn = false
         ishare ? jiangli() : $('.share').show()
     })
     // 关闭分享(测试用)
     $('.share').on('click', function () {
-        isbtn = false;
         ishare = true;
         $('.share').hide()
         jiangli()
@@ -347,14 +321,58 @@ $(document).ready(function () {
             if (binding) {
                 showMask();
                 if (isbtn) {
+                    if (CM) {
+                        // 链接
+                        var data_left = parseInt(Math.random() * 3);
+                        switch (data_left) {
+                            case 0:
+                                // 5元欢享券
+                                $('.giveta_link').css('background-image', 'url()').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq5Y#wechat_redirect')
+                                break;
+                            case 1:
+                                // 自由话费 
+                                $('.giveta_link').css('background-image', 'url()').attr('href', '')
+                                break;
+                            case 2:
+                                // 倍享包  
+                                $('.giveta_link').css('background-image', 'url()').attr('href', 'https://mp.weixin.qq.com/s/6vXyrUx9Fy4Y-hqwXzf9cQ')
+                                break;
+                        }
+                    } else {
+                        // 异网（移动王卡）
+                        $('.giveta_link').css('background-color', 'red').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=YDWKWXYW')
+                    }
                     $('#givebtn').hasClass('allget_btn') ? $('.tc_02').show() : $('.tc_01').show()
                 } else {
                     // 本网
                     if (CM) {
+                        // 链接
+                        var data_li = parseInt(Math.random() * 3);
+                        switch (data_li) {
+                            case 0:
+                                // 本网
+                                // 手厅活动 
+                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.a_link_cm').attr('href', 'http://sc.bj.chinamobile.com/activity/loading/loading.html?actname=coupon')
+                                break;
+                            case 1:
+                                // 10GB欢享券 
+                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.a_link_cm').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq10Y#wechat_redirect')
+                                break;
+                            case 2:
+                                // 流量放心用 
+                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.a_link_cm').attr('href', 'https://mp.weixin.qq.com/s/K6W3CaZajWdDb4WgBxJUXQ')
+                                break;
+                        }
                         $('.tc_03').show()
                     } else {
                         // 异网
                         if ($('#main_share').hasClass('allget')) {
+                             // 异网用户分享：无限卡 
+                        $('.al_yibg').css('background-image', 'url()')
+                        $('.a_link_yi').attr('href', ' https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
                             $('.tc_07').show()
                         } else {
                             $('.tc_04').show()
@@ -414,12 +432,6 @@ $(document).ready(function () {
         hideMask();
         $('.tc_02').hide();
     })
-    // 异网弹窗2关闭
-    $('.close4').on('click', function () {
-        hideMask();
-        // $('#main_share').addClass('cancel')
-        $(this).parent().parent().hide();
-    })
     // 异网弹窗2
     $('#givebtn5').on('click', function () {
         var inputMobile = $('#inputMobile').val();
@@ -478,12 +490,12 @@ $(document).ready(function () {
     function cludeChangeImg() {
         $('.last_img').animate({ width: "4.9rem", height: '5.58rem', opacity: '0', left: '0', right: '0', filter: 'alpha(opacity=0)' }, 1500, function () {
             $('#last_first').css('display', 'none')
-            $('.last_01').stop().animate({ opacity: '1' }, 'slow',function(){
-                $('.last_02').stop().animate({ opacity: '1' }, "slow",function(){
-                    $('.last_03').stop().animate({ opacity: '1' }, "slow",function(){
+            $('.last_01').stop().animate({ opacity: '1' }, 'slow', function () {
+                $('.last_02').stop().animate({ opacity: '1' }, "slow", function () {
+                    $('.last_03').stop().animate({ opacity: '1' }, "slow", function () {
                         if (firstLoading) {
                             $('.finish').show()
-                        }  
+                        }
                     })
                 })
             })

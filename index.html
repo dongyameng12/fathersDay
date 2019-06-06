@@ -26,6 +26,7 @@
             './images/end_03.png',
             './images/end_04_01.png',
             './images/end_04.png',
+            './images/end_blook.png',
             './images/end_btn.png',
             './images/end_li.png',
             './images/end_look.png',
@@ -33,6 +34,7 @@
             './images/home_02.png',
             './images/home_left.png',
             './images/home_rig.png',
+            './images/home_title_01.png',
             './images/home_title.png',
             './images/homex_01.png',
             './images/homex_02.png',
@@ -45,6 +47,7 @@
             './images/p_03.png',
             './images/p_04.png',
             './images/p_05.png',
+            './images/p_06.png',
             './images/p_bg.png',
             './images/palymemories.png',
             './images/ph_01.png',
@@ -58,7 +61,6 @@
             './images/tc_cgive.png',
             './images/tc_qita.png',
             './images/tc_sure.png',
-            './images/tc_tj.png',
             './images/tc_xg.png',
             './images/tc_xsure.png'
         ],  function (percentage) {
@@ -85,10 +87,10 @@
 
 <body>
     <!-- 测试按钮 -->
-    <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
-    <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
-    <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">恢复首次登录</button>
-    <button style="position:absolute;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test5">异网用户</button>
+    <button style="position:fixed;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
+    <button style="position:fixed;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
+    <button style="position:fixed;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">恢复首次登录</button>
+    <button style="position:fixed;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test5">异网用户</button>
     <!--loading-->
     <section class="loader">
         <div class="loader_info"></div>
@@ -99,14 +101,6 @@
     <!-- 背景音乐 -->
     <section class="music" id="musicMenu">
         <audio src="audio/music.mp3" preload="none" loop id="music" autoplay=false></audio>
-    </section>
-    <!-- 场景声音 -->
-    <section>
-        <audio src="audio/ms1.mp3"  id="ms1"></audio>
-        <audio src="audio/ms2.mp3" id="ms2"></audio>
-        <audio src="audio/ms3.wav" id="ms3"></audio>
-        <audio src="audio/ms4.wav" id="ms4"></audio>
-        <audio src="audio/ms5.wav" id="ms5"></audio>
     </section>
     <!-- 首页 -->
     <section class="home">
@@ -126,7 +120,7 @@
     <!-- 照片展示 -->
     <section class="phdisplay">
         <div>
-            <div></div>
+            <div id="ph_title"></div>
         </div>
         <div>
             <ul class="ph_list">
@@ -172,8 +166,7 @@
             <div class="last_01 reset_list">
                 <p>几张泛黄的照片写满了回忆</p>
                 <p>他无声的爱就这样伴你数十年 </p>
-                <p>时间稍纵即逝</p>
-                <p>却也留下了痕迹</p>
+                <p>时间稍纵即逝却也留下了痕迹</p>
             </div>
             <div  class="last_02 reset_list">
                 <p>他的脊背不再挺拔 </p>
@@ -182,10 +175,7 @@
                 <p>现在&nbsp;&nbsp;该你守护他了</p>
             </div>
             <div  class="last_03 reset_list">
-                <p>如果不能经常陪伴 </p>
-                <p> 那就陪他们聊聊天吧</p>
-                <p>移动亲情网守护每个家庭</p>
-                <p>一起互打不花钱</p>
+                <p></p>
             </div>
             <div class="last_02 reset_list"></div>
         </div>
@@ -253,9 +243,7 @@
     <section class="tc tc_02">
         <div>
             <div>
-                <p>您已将
-                    <span> 50</span>
-                    <span>MB</span> 全国流量 </p>
+                <p>您已将<span> 50</span><span>MB</span> 全国流量 </p>
                 <p>转赠到手机号码</p>
                 <p class="phone_text">13800000000 </p>
                 <p>的账户中。</p>
@@ -265,12 +253,13 @@
                 <p> 有效期7天</p>
                 <p>(流量到账后，立即生效)</p>
             </div>
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);" class="giveta_link"></a>
         </div>
         <a href="javascript:void(0);" id="givebtn_02"></a>
     </section>
     <!-- 本网弹窗 -->
     <section class="tc tc_03">
+        <a href="javascript:void(0);" class="close"></a>        
         <div>  
             <p>恭喜您的手机号</p>
             <p>XXXXXXXXXXX</p>
@@ -278,17 +267,17 @@
             <p>流量将于15日内到账</p>
             <p>有效期：7天</p>
             <p>（流量到账后，立即生效）</p> 
-            <a href="javascript:void(0);"></a>
+            <a href="javascript:void(0);" class="a_link_cm al_cmbg"></a>
         </div>
-        <a href="javascript:void(0);" class="close"></a>
+        <a href="javascript:void(0);" class="a_link_cm"></a>
     </section>
     <!-- 异网弹窗1 -->
     <section class="tc tc_04">
-        <div><p class="close4"></p></div>
+        <a href="javascript:void(0);" class="close"></a>
         <div> 
             <p>恭喜您的手机号</p>
             <p> XXXXXXXXXXX</p>
-            <p> 获得<span>1GB全国流量</span> </p>
+            <p> 获得<span>1GB</span>全国流量 </p>
             <p>您可以转赠到 </p>
             <p>北京移动号码内</p>
             <p>(流量仅可在活动期间进行转赠)</p>
@@ -300,7 +289,7 @@
     </section>
     <!-- 异网弹窗2 -->
     <section class="tc tc_05">
-        <div><p class="close4"></p></div>
+       <a href="javascript:void(0);" class="close"></a>
         <div>
             <p>请输入好友 </p>
             <p>北京移动手机号码</p>
@@ -328,17 +317,18 @@
     </section>
     <!-- 异网流量弹窗 4-->
     <section class="tc tc_07">
+            <a href="javascript:void(0);" id="close7"></a>     
             <div>
                 <p>您已将<span> 500MB</span>全国流量</p>
                 <p>转赠到手机号码</p>
-                <p><span>xxxxxxxxxxx</span>账户中</p>
+                <p><span class="mobile_text">xxxxxxxxxxx</span>账户中</p>
                 <p>流量将于15日内到账</p>
                 <p>有效期：7天</p>
                 <p>（流量到账后，立即生效）</p>
-                <a href="javascript:void(0);"></a>
+                <a href="javascript:void(0);" class="a_link_yi al_yibg"></a>
             </div>
-            <a href="javascript:void(0);" id="close7"></a>
-        </section>
+            <a href="javascript:void(0);" class="a_link_yi"></a>
+    </section>
     <!-- 遮罩层 -->
     <section class="mask" id="mask"></section>
     <script>

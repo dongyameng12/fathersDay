@@ -1336,11 +1336,22 @@ body section.mask {
   background: url('../images/p_bg.png') no-repeat;
   background-size: cover;
 }
-.p1 > p {
+.p1 > div:nth-child(1) {
+  font-size: .36rem;
+  position: absolute;
+  left: .45rem;
+  top: .9rem;
+}
+.p1 > div:nth-child(1) > p {
+  line-height: .7rem;
+}
+.p1 > div:nth-child(2) {
   width: 7.5rem;
-  height: 11.24rem;
+  height: 7.81rem;
   background: url('../images/p_01.png') no-repeat;
   background-size: cover;
+  position: absolute;
+  bottom: 0;
 }
 .p2 > p {
   width: 7.5rem;

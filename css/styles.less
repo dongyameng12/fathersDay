@@ -1262,14 +1262,33 @@ section.mask{
 }
 // 场景1
 .p1{
-    >p{
-        width: 7.5rem;
-        height:11.24rem;
-        background: url('../images/p_01.png') no-repeat;
-        background-size: cover;
-        // position: fixed;
-        // bottom: 0;
+    >div{
+        &:nth-child(1){
+            font-size: .36rem;
+            position: absolute;
+            left: .45rem;
+            top: .9rem;
+            >p{
+                line-height: .7rem;
+            }
+        }
+        &:nth-child(2){
+            width: 7.5rem;
+            height:7.81rem;
+            background: url('../images/p_01.png') no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+        }
     }
+    // >p{
+    //     width: 7.5rem;
+    //     height:11.24rem;
+    //     background: url('../images/p_01.png') no-repeat;
+    //     background-size: cover;
+    //     // position: fixed;
+    //     // bottom: 0;
+    // }
 } 
 // 场景2
 .p2{

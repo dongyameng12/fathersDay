@@ -376,7 +376,8 @@ body section.last_page > div:nth-child(2) {
   color: #3e2e20;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  padding-top: .59rem;
+  box-sizing: border-box;
   align-items: center;
   position: absolute;
   top: 0;
@@ -400,7 +401,7 @@ body section.last_page > div:nth-child(2) > div:nth-child(3) {
   width: 5.04rem;
   height: 1.86rem;
   background-size: cover;
-  margin: .84rem auto .76rem;
+  margin: .6rem auto .6rem;
 }
 html section.last_page > div:nth-child(2) > div:nth-child(4),
 body section.last_page > div:nth-child(2) > div:nth-child(4) {
@@ -498,9 +499,10 @@ body section.end > div:nth-child(2) > div:nth-child(2) > input {
   right: 0;
   margin: auto;
   width: 5.7rem;
-  height: .8rem;
+  padding: .2rem 0;
   background-color: rgba(130, 108, 88, 0.5);
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
   border: solid .04rem #fff;
   border-radius: .24rem;
   text-align: center;
@@ -649,6 +651,11 @@ body section.tc.tc_rule > ul {
 html section.tc.tc_rule > ul > li,
 body section.tc.tc_rule > ul > li {
   line-height: .5rem;
+  font-size: .24rem;
+}
+html section.tc.tc_rule > ul > li > p:nth-child(1),
+body section.tc.tc_rule > ul > li > p:nth-child(1) {
+  font-size: .26rem;
 }
 html section.tc.tc_rule > a,
 body section.tc.tc_rule > a {
@@ -862,7 +869,6 @@ body section.tc.tc_07 > div > a {
   height: 1.94rem;
   background-size: cover;
   background-repeat: no-repeat;
-  background: #a9baff;
   margin-top: .37rem;
 }
 html section.tc.tc_03 > a,

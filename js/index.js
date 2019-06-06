@@ -9,6 +9,9 @@ $(document).ready(function () {
     var binding = true;
     // 本网，异网判断（本网）
     var CM = true;
+    // 链接
+    var data_left = parseInt(Math.random() * 3);
+    var data_li = parseInt(Math.random() * 3);
     // 用于按钮弹窗，还是点击礼盒（默认按钮）
     var isbtn = true
     //是否分享（没分享）
@@ -323,31 +326,28 @@ $(document).ready(function () {
                 if (isbtn) {
                     if (CM) {
                         // 链接
-                        var data_left = parseInt(Math.random() * 3);
                         switch (data_left) {
                             case 0:
                                 // 5元欢享券
-                                $('.giveta_link').css('background-image', 'url()').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq5Y#wechat_redirect')
+                                $('.giveta_link').css('background-image', 'url(images/ban_wuyuan.jpg)').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq5Y#wechat_redirect')
                                 break;
                             case 1:
                                 // 自由话费 
-                                $('.giveta_link').css('background-image', 'url()').attr('href', '')
+                                $('.giveta_link').css('background-image', 'url(images/ban_ziyou.jpg)').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=cydsfzyhf38#wechat_redirect')
                                 break;
                             case 2:
                                 // 倍享包  
-                                $('.giveta_link').css('background-image', 'url()').attr('href', 'https://mp.weixin.qq.com/s/6vXyrUx9Fy4Y-hqwXzf9cQ')
+                                $('.giveta_link').css('background-image', 'url(images/ban_beixiang.png)').attr('href', ' https://mp.weixin.qq.com/s/6vXyrUx9Fy4Y-hqwXzf9cQ')
                                 break;
                         }
                     } else {
                         // 异网（移动王卡）
-                        $('.giveta_link').css('background-color', 'red').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=YDWKWXYW')
+                        $('.giveta_link').css('background-image', 'url(images/ban_wangka.png)').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=YDWKWXYW')
                     }
                     $('#givebtn').hasClass('allget_btn') ? $('.tc_02').show() : $('.tc_01').show()
                 } else {
                     // 本网
                     if (CM) {
-                        // 链接
-                        var data_li = parseInt(Math.random() * 3);
                         switch (data_li) {
                             case 0:
                                 // 本网
@@ -357,12 +357,11 @@ $(document).ready(function () {
                                 break;
                             case 1:
                                 // 10GB欢享券 
-                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.al_cmbg').css('background-image', 'url(images/ban_shiyuan.jpg)')
                                 $('.a_link_cm').attr('href', 'http://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7858699aca01b75f&redirect_uri=http%3A%2F%2Fserviceimg.bmcc.com.cn%2Fweixin%2Fredirect%2FdispenseRequest.action&response_type=code&scope=snsapi_base&state=hxyhq10Y#wechat_redirect')
-                                break;
                             case 2:
                                 // 流量放心用 
-                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.al_cmbg').css('background-image', 'url(images/ban_fangxin.png)')
                                 $('.a_link_cm').attr('href', 'https://mp.weixin.qq.com/s/K6W3CaZajWdDb4WgBxJUXQ')
                                 break;
                         }
@@ -371,8 +370,8 @@ $(document).ready(function () {
                         // 异网
                         if ($('#main_share').hasClass('allget')) {
                              // 异网用户分享：无限卡 
-                        $('.al_yibg').css('background-image', 'url()')
-                        $('.a_link_yi').attr('href', ' https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
+                        $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
+                        $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
                             $('.tc_07').show()
                         } else {
                             $('.tc_04').show()
@@ -387,8 +386,7 @@ $(document).ready(function () {
             }
         } else {
             // 未关注
-            alert('未关注');
-            // window.location.href = "https://mp.weixin.qq.com/s/FDD5Q57SnOrWAiYkfyzLFQ";
+            window.location.href = "https://mp.weixin.qq.com/s/I5_SP5hTP5tmwZmWn8_i3Q";
         }
     };
     // (修改和确认)

@@ -190,7 +190,7 @@ $(document).ready(function () {
                         setTimeout(function () {
                             $('.last_page').hide()
                             $('.end').show()
-                        }, 6500)
+                        }, 7500)
                     }, 1000)
                 }, 2000)
             }

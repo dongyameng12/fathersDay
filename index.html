@@ -80,7 +80,11 @@
                     if(!isLoading){
                         $('.home').show();
                         login();
-                    }else{
+                    } else {
+                        if (jump_alink) {
+                            $('#givebtn').css('background-image', 'url(./images/end_blook.png)')
+                            $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
+                        }
                         $('.end').show();
                     }
                     $('#musicMenu').addClass('move').show();
@@ -93,10 +97,12 @@
 
 <body>
     <!-- 测试按钮 -->
-    <button style="position:fixed;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
-    <button style="position:fixed;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
-    <button style="position:fixed;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">恢复首次登录</button>
-    <button style="position:fixed;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test5">异网用户</button>
+    <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
+    <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
+    <button style="position:absolute;z-index:300;top:2rem;font-weight:bolder;" href="#" class="test4">异网用户</button>
+    <button style="position:absolute;z-index:300;top:2.5rem;font-weight:bolder;" href="#" class="test5">恢复首次登录</button>
+    <button style="position:absolute;z-index:300;top:3rem;font-weight:bolder;" href="#" class="test6">恢复输入号码</button>
+
     <!--loading-->
     <section class="loader" >
         <div class="loader_info"></div>
@@ -159,13 +165,54 @@
                     <div></div>
                 </div>
                 <!-- 场景2-->
-                <div><p></p></div>
+                <div>
+                    <div> 
+                        <p>小时候你总是说&nbsp;&nbsp;爸爸是超人 </p>
+                        <p>有他在的地方&nbsp;&nbsp;就是温暖的避风港 </p>
+                        <p>可是为什么你需要他时&nbsp;&nbsp;他总会出现 </p>
+                        <p>其实&nbsp;&nbsp; 不管你需不需要</p>
+                        <p>他都一直在你身后</p>
+                        <p>默默守护</p>
+                    </div>
+                    <div></div>
+                </div>
                 <!-- 场景3 -->
-                <div><p></p></div>
+                <div>
+                    <div>
+                        <p>那年你为了梦想离开家乡</p>
+                        <p>他没有挽留&nbsp;&nbsp;只说了一句记得回家 </p>
+                        <p>其实年轻时 </p>
+                        <p>他也曾满腔热血</p>
+                        <p>但你的一声“爸爸” </p>
+                        <p>他选择放慢了脚步</p>
+                        <p>陪你一起长大</p>
+                    </div>
+                    <div></div>
+                </div>
                 <!-- 场景4-->
-                <div><p></p></div>
+                <div>     
+                    <div>
+                        <p>后来你结婚生子</p>
+                        <p>有了自己的家庭 </p>
+                        <p>妈妈说爸爸总是偷偷翻看相册  </p>
+                        <p>有时还会憨憨的笑</p>
+                        <p>大概你成长中的每件事 </p>
+                        <p>他都记得吧 </p>
+                    </div>
+                    <div></div>    
+                </div>
                 <!-- 场景5 -->
-                <div><p></p></div>
+                <div>
+                    <div>
+                        <p>以为他不善表达</p>
+                        <p>打电话总念叨着  </p>
+                        <p>“我们都挺好的 不多说了”</p>
+                        <p>其实他是怕聊太久浪费钱</p>
+                        <p>有很多话还没说出口</p>
+                        <p>“想你了回来看看吧”</p>
+                    </div>
+                    <div></div>
+                </div>
             </div>
         </div>
         <div id="return">
@@ -245,7 +292,7 @@
     </section>
     <!-- 分享页 -->
     <section class="share">
-        <div></div>
+        <div></div> 
     </section>
     <!-- 绑定手机号 -->
     <section class="bind"></section>
@@ -272,6 +319,7 @@
     </section>
     <!-- 温馨提示 -->
     <section class="tc tc_02">
+        <a href="javascript:void(0);" id="givebtn_02"></a>
         <div>
             <div>
                 <p>您已将<span> 50</span><span>MB</span> 全国流量 </p>
@@ -284,9 +332,9 @@
                 <p> 有效期7天</p>
                 <p>(流量到账后，立即生效)</p>
             </div>
-            <a href="javascript:void(0);" class="giveta_link"></a>
+            <a href="javascript:void(0);" class="giveta_link giveta_libg"></a>
         </div>
-        <a href="javascript:void(0);" id="givebtn_02"></a>
+        <a href="javascript:void(0);" class="giveta_link"></a>
     </section>
     <!-- 本网弹窗 -->
     <section class="tc tc_03">

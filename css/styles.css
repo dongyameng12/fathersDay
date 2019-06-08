@@ -84,7 +84,7 @@ body section.home > div:nth-child(1) > a {
 html section.home > div:nth-child(1) > div,
 body section.home > div:nth-child(1) > div {
   position: absolute;
-  top: .52rem;
+  top: .2rem;
   left: 0;
   right: 0;
   margin: auto;
@@ -97,7 +97,7 @@ body section.home > div:nth-child(1) > div {
 html section.home > div:nth-child(2),
 body section.home > div:nth-child(2) {
   position: relative;
-  top: -0.32rem;
+  top: -0.84rem;
 }
 html section.home > div:nth-child(2) > div:nth-child(1),
 body section.home > div:nth-child(2) > div:nth-child(1) {
@@ -136,7 +136,7 @@ body section.home > div:nth-child(3) {
   z-index: 100;
   left: 0;
   right: 0;
-  top: -0.41rem;
+  top: -0.93rem;
   margin: auto;
 }
 html section.home > div:nth-child(4),
@@ -373,18 +373,13 @@ html section.last_page > div:nth-child(2),
 body section.last_page > div:nth-child(2) {
   height: 100%;
   font-size: .36rem;
+  padding-top: .59rem;
   color: #3e2e20;
   display: flex;
   flex-direction: column;
-  padding-top: .59rem;
   box-sizing: border-box;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   margin: auto;
-  z-index: 1;
 }
 html section.last_page > div:nth-child(2) > div,
 body section.last_page > div:nth-child(2) > div {
@@ -395,15 +390,22 @@ html section.last_page > div:nth-child(2) > div > p,
 body section.last_page > div:nth-child(2) > div > p {
   line-height: .7rem;
 }
+html section.last_page > div:nth-child(2) > div:nth-child(1),
+body section.last_page > div:nth-child(2) > div:nth-child(1),
+html section.last_page > div:nth-child(2) > div:nth-child(2),
+body section.last_page > div:nth-child(2) > div:nth-child(2),
+html section.last_page > div:nth-child(2) > div:nth-child(3),
+body section.last_page > div:nth-child(2) > div:nth-child(3) {
+  position: relative;
+  z-index: 1;
+}
 html section.last_page > div:nth-child(2) > div:nth-child(3),
 body section.last_page > div:nth-child(2) > div:nth-child(3) {
   background: url('../images/p_06.png') no-repeat;
   width: 5.04rem;
   height: 1.86rem;
   background-size: cover;
-  margin: .6rem auto .6rem;
-  position: relative;
-  z-index: 2;
+  margin: .6rem auto;
 }
 html section.last_page > div:nth-child(2) > div:nth-child(4),
 body section.last_page > div:nth-child(2) > div:nth-child(4) {
@@ -411,7 +413,8 @@ body section.last_page > div:nth-child(2) > div:nth-child(4) {
   height: 3.91rem;
   background: url('../images/last_beiying.png') no-repeat;
   background-size: cover;
-  margin-top: .1rem;
+  position: absolute;
+  bottom: 0;
 }
 html section.last_page > a,
 body section.last_page > a {
@@ -794,8 +797,18 @@ body section.tc.tc_02 > div > a {
   background-repeat: no-repeat;
   background-color: #5656f1;
 }
-html section.tc.tc_02 > a,
-body section.tc.tc_02 > a {
+html section.tc.tc_02 > a:nth-child(1),
+body section.tc.tc_02 > a:nth-child(1) {
+  position: absolute;
+  right: .48rem;
+  top: -0.3rem;
+  width: .65rem;
+  height: .65rem;
+  background: url('../images/close.png') no-repeat;
+  background-size: cover;
+}
+html section.tc.tc_02 > a:nth-child(3),
+body section.tc.tc_02 > a:nth-child(3) {
   position: absolute;
   bottom: .3rem;
   left: 0;
@@ -1341,6 +1354,7 @@ body section.mask {
   position: absolute;
   left: .45rem;
   top: .9rem;
+  z-index: 1;
 }
 .p1 > div:nth-child(1) > p {
   line-height: .7rem;
@@ -1353,27 +1367,90 @@ body section.mask {
   position: absolute;
   bottom: 0;
 }
-.p2 > p {
-  width: 7.5rem;
+.p2 > div:nth-child(1) {
+  font-size: .36rem;
+  position: absolute;
+  left: .6rem;
+  top: 1.09rem;
+  z-index: 1;
+}
+.p2 > div:nth-child(1) > p {
+  line-height: .6rem;
+}
+.p2 > div:nth-child(1) > p:nth-child(3) {
+  margin-top: .2rem;
+}
+.p2 > div:nth-child(2) {
+  width: 6.15rem;
   height: 12.06rem;
   background: url('../images/p_02.png') no-repeat;
   background-size: cover;
+  position: absolute;
+  bottom: 0;
 }
-.p3 > p {
-  width: 7.5rem;
-  height: 11.14rem;
+.p3 > div:nth-child(1) {
+  font-size: .36rem;
+  position: absolute;
+  left: .6rem;
+  top: .92rem;
+  z-index: 1;
+}
+.p3 > div:nth-child(1) > p {
+  line-height: .6rem;
+}
+.p3 > div:nth-child(1) > p:nth-child(3) {
+  margin-top: .2rem;
+}
+.p3 > div:nth-child(2) {
+  width: 6.79rem;
+  height: 9.89rem;
   background: url('../images/p_03.png') no-repeat;
   background-size: cover;
+  position: absolute;
+  bottom: 0;
 }
-.p4 > p {
-  width: 7.50rem;
-  height: 10.84rem;
+.p4 > div:nth-child(1) {
+  font-size: .36rem;
+  position: absolute;
+  left: .6rem;
+  top: .92rem;
+  z-index: 1;
+}
+.p4 > div:nth-child(1) > p {
+  line-height: .6rem;
+}
+.p4 > div:nth-child(1) > p:nth-child(3) {
+  margin-top: .2rem;
+}
+.p4 > div:nth-child(2) {
+  width: 7.03rem;
+  height: 7.73rem;
   background: url('../images/p_04.png') no-repeat;
   background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-.p5 > p {
-  width: 7.5rem;
-  height: 11.21rem;
-  background: url('../images/p_05.png') no-repeat;
+.p5 > div:nth-child(1) {
+  font-size: .36rem;
+  position: absolute;
+  left: .6rem;
+  top: .92rem;
+  z-index: 1;
+}
+.p5 > div:nth-child(1) > p {
+  line-height: .6rem;
+}
+.p5 > div:nth-child(1) > p:nth-child(4),
+.p5 > div:nth-child(1) > p:nth-child(6) {
+  margin-top: .2rem;
+}
+.p5 > div:nth-child(2) {
+  width: 7.03rem;
+  height: 7.73rem;
+  background: url('../images/p_04.png') no-repeat;
   background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

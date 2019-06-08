@@ -69,7 +69,7 @@ html,body{
                 }
                 >div{
                     position: absolute;
-                    top: .52rem;
+                    top: .2rem;
                     left: 0;
                     right: 0;
                     margin: auto;
@@ -82,7 +82,7 @@ html,body{
             }
             &:nth-child(2){
                 position: relative;
-                top: -.32rem;
+                top: -.84rem;
                 >div{
                     &:nth-child(1){
                         width:7.41rem;
@@ -121,7 +121,7 @@ html,body{
                 z-index: 100;
                 left: 0;
                 right: 0;
-                top: -0.41rem;
+                top: -0.93rem;
                 margin: auto;
             }
             &:nth-child(4){
@@ -333,39 +333,37 @@ html,body{
             &:nth-child(2){
                 height: 100%;
                 font-size: .36rem;
+                padding-top: .59rem;
                 color: #3e2e20;
                 display: flex;
                 flex-direction: column;
-                padding-top: .59rem;
                 box-sizing: border-box;
                 align-items: center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
                 margin: auto;
-                z-index: 1;
                 >div{
                     width: 4.9rem;
                     opacity: 0;
                     >p{
                         line-height: .7rem;
                     }
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                        position: relative;
+                        z-index: 1;
+                    }
                     &:nth-child(3){
                         background: url('../images/p_06.png') no-repeat;
                         width: 5.04rem;
                         height: 1.86rem;
                         background-size: cover;
-                        margin: .6rem auto .6rem;
-                        position: relative;
-                        z-index: 2;
+                        margin: .6rem auto;
                     }
                     &:nth-child(4){
                         width: 3.13rem;
                         height: 3.91rem;
                         background: url('../images/last_beiying.png') no-repeat;
                         background-size: cover;
-                        margin-top: .1rem;
+                        position: absolute;
+                        bottom: 0;
                     }
                 }
             }
@@ -736,17 +734,28 @@ html,body{
                 }
             }
            >a{
-               display: inline-block;
-               position: absolute;
-               bottom: .3rem;
-               left: 0;
-               right: 0;
-               margin:auto;
-               display: inline-block;
-               width: 2.24rem;
-               height:.71rem;
-               background: url('../images/tc_sure.png') no-repeat;
-               background-size: cover;
+               &:nth-child(1){
+                position: absolute;
+                right: .48rem;
+                top: -0.3rem;
+                width: .65rem;
+                height: .65rem;
+                background: url('../images/close.png') no-repeat;
+                background-size: cover;
+               }
+               &:nth-child(3){
+                display: inline-block;
+                position: absolute;
+                bottom: .3rem;
+                left: 0;
+                right: 0;
+                margin:auto;
+                display: inline-block;
+                width: 2.24rem;
+                height:.71rem;
+                background: url('../images/tc_sure.png') no-repeat;
+                background-size: cover;
+               }
            }
         }
         // 本网弹窗
@@ -1268,6 +1277,7 @@ section.mask{
             position: absolute;
             left: .45rem;
             top: .9rem;
+            z-index: 1;
             >p{
                 line-height: .7rem;
             }
@@ -1281,54 +1291,110 @@ section.mask{
             bottom: 0;
         }
     }
-    // >p{
-    //     width: 7.5rem;
-    //     height:11.24rem;
-    //     background: url('../images/p_01.png') no-repeat;
-    //     background-size: cover;
-    //     // position: fixed;
-    //     // bottom: 0;
-    // }
 } 
 // 场景2
 .p2{
-    >p{
-        width: 7.5rem;
-        height: 12.06rem;
-        background: url('../images/p_02.png') no-repeat;
-        background-size: cover;
-        // position: fixed;
-        // bottom: 0;
+    >div{
+        &:nth-child(1){
+            font-size: .36rem;
+            position: absolute;
+            left: .6rem;
+            top: 1.09rem;
+            z-index: 1;
+            >p{
+                line-height: .6rem;
+                &:nth-child(3){
+                    margin-top: .2rem;
+                }
+            }
+        }
+        &:nth-child(2){
+            width: 6.15rem;
+            height:12.06rem;
+            background: url('../images/p_02.png') no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+        }
     }
 } 
 // 场景3
 .p3{
-    >p{
-        width: 7.5rem;
-        height: 11.14rem;
-        background: url('../images/p_03.png') no-repeat;
-        background-size: cover;
-        // position: fixed;
-        // bottom: 0;
+    >div{
+        &:nth-child(1){
+            font-size: .36rem;
+            position: absolute;
+            left: .6rem;
+            top: .92rem;
+            z-index: 1;
+            >p{
+                line-height: .6rem;
+                &:nth-child(3){
+                    margin-top: .2rem;
+                }
+            }
+        }
+        &:nth-child(2){
+            width: 6.79rem;
+            height:9.89rem;
+            background: url('../images/p_03.png') no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+        }
     }
 } 
 // 场景4
 .p4{
-    >p{
-        width:7.50rem;
-        height: 10.84rem;
-        background: url('../images/p_04.png') no-repeat;
-        background-size: cover;
+    >div{
+        &:nth-child(1){
+            font-size: .36rem;
+            position: absolute;
+            left: .6rem;
+            top: .92rem;
+            z-index: 1;
+            >p{
+                line-height: .6rem;
+                &:nth-child(3){
+                    margin-top: .2rem;
+                }
+            }
+        }
+        &:nth-child(2){
+            width: 7.03rem;
+            height:7.73rem;
+            background: url('../images/p_04.png') no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
     }
 } 
 // 场景5
 .p5{
-    >p{
-        width:7.5rem;
-        height: 11.21rem;
-        background: url('../images/p_05.png') no-repeat;
-        background-size: cover;
-        // position: fixed;
-        // bottom: 0;
+    >div{
+        &:nth-child(1){
+            font-size: .36rem;
+            position: absolute;
+            left: .6rem;
+            top: .92rem;
+            z-index: 1;
+            >p{
+                line-height: .6rem;
+                &:nth-child(4),&:nth-child(6){
+                    margin-top: .2rem;
+                }
+            }
+        }
+        &:nth-child(2){
+            width: 7.03rem;
+            height:7.73rem;
+            background: url('../images/p_04.png') no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
     }
 } 

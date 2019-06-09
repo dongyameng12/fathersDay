@@ -281,7 +281,7 @@ $(document).ready(function () {
     // 送她520MB
     $('#givebtn').on('click', function () {
         isbtn = true
-        if ($('#givebtn').hasClass('allget_btn')||jump_alink) {
+        if (jump_alink) {
             // 查看
             jiangli();
         } else {
@@ -350,7 +350,7 @@ $(document).ready(function () {
                         $('.giveta_libg').css('background-image', 'url(images/ban_wangka.png)')
                         $('.giveta_link').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=YDWKWXYW')
                     }
-                    $('#givebtn').hasClass('allget_btn')||jump_alink ? $('.tc_02').show() : $('.tc_01').show()
+                   jump_alink ? $('.tc_02').show() : $('.tc_01').show()
                 } else {
                     // 本网
                     if (CM) {
@@ -435,13 +435,6 @@ $(document).ready(function () {
             localStorage.setItem('jump_alink', true)
         }
         
-    })
-    // 点击温馨提示（确认）
-    $('#givebtn_02').on('click', function () {
-        $('#givebtn').addClass('allget_btn').css('background-image', 'url(./images/end_blook.png)')
-        $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
-        hideMask();
-        $('.tc_02').hide();
     })
     // 异网弹窗2
     $('#givebtn5').on('click', function () {

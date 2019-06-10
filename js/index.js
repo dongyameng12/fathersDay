@@ -80,7 +80,6 @@ $(document).ready(function () {
         window.setTimeout(controlMusic, 1000);
     }();
     // 背景音乐和声音的处理end
-
     // 翻页turn
     // 初始化turn容器
     function init_turn() {
@@ -587,6 +586,8 @@ $(document).ready(function () {
 function playMusic() {
     // 播放
     $('#musicMenu').addClass('move');
+    document.getElementById("musicMenu").loop = true;
+    document.getElementById("musicMenu").volume = 0.1;
     $('#musicMenu').show();
     music.play();
 }

@@ -284,7 +284,7 @@ $(document).ready(function () {
     // 送她520MB
     $('#givebtn').on('click', function () {
         isbtn = true
-        if (jump_alink) {
+        if ($('#givebtn').hasClass('allget_btn')||jump_alink) {
             // 查看
             jiangli();
         } else {
@@ -353,7 +353,7 @@ $(document).ready(function () {
                         $('.giveta_libg').css('background-image', 'url(images/ban_wangka.png)')
                         $('.giveta_link').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=YDWKWXYW')
                     }
-                   jump_alink ? $('.tc_02').show() : $('.tc_01').show()
+                    $('#givebtn').hasClass('allget_btn')||jump_alink ? $('.tc_02').show() : $('.tc_01').show()
                 } else {
                     // 本网
                     if (CM) {
@@ -380,7 +380,7 @@ $(document).ready(function () {
                         // 异网
                         $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
                         $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
-                        if (jump_yialink) {
+                        if (jump_yialink||$('#main_share').hasClass('allget')) {
                             $('.tc_07').show()
                         } else {
                         // 异网用户分享：无限卡 
@@ -437,8 +437,14 @@ $(document).ready(function () {
             localStorage.setItem('jump_alink', true)
         }
     })
-    // 本网弹窗
-     // 异网弹窗4
+    // 点击温馨提示（确认）
+    $('#givebtn_02').on('click', function () {
+        $('#givebtn').addClass('allget_btn').css('background-image', 'url(./images/end_blook.png)')
+        $('#change_context').html("<p class='zhanshi'>已转增给<span>XXXXXXXXXXX</span></p>")
+        hideMask();
+        $('.tc_02').hide();
+    })
+    // 本网弹窗（立即提交）
      $('#close7_cm').on('click', function () {
         if (jump_cmalink == null) {
             localStorage.setItem('jump_cmalink', true)
@@ -466,11 +472,17 @@ $(document).ready(function () {
         $('.tc_06').hide();
         $('.tc_07').show();
     })
-    // 异网弹窗4
+    // 异网弹窗4(立即提交)
     $('#close7').on('click', function () {
         if (jump_yialink == null) {
             localStorage.setItem('jump_yialink', true)
         }
+    })
+    // 异网4（关闭）
+    $('#close8').on('click', function () {
+        $('#main_share').addClass('allget')
+        $(this).parent().hide();
+        hideMask()
     })
     // 异网弹窗4（确认）
     $('#givebtn4').on('click', function () {

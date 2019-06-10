@@ -673,9 +673,9 @@ body section.tc.tc_rule > a {
   right: 0;
   margin: auto;
   display: inline-block;
-  width: 2.24rem;
+  width: 1.76rem;
   height: .71rem;
-  background: url('../images/tc_sure.png') no-repeat;
+  background: url('../images/tc_xsure.png') no-repeat;
   background-size: cover;
 }
 html section.tc.tc_01,
@@ -1322,6 +1322,41 @@ body section.mask {
   100% {
     transform: rotateY(0deg);
   }
+}
+@-webkit-keyframes mainScale {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes mainScale {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.main_btn {
+  -webkit-animation: mainScale 1.2s linear 0s infinite both;
+  animation: mainScale 1.2s linear 0s infinite both;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  /* Safari 和 Chrome */
 }
 #last_first {
   position: fixed;

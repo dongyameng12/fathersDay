@@ -2,8 +2,10 @@
 $(function () {
     FastClick.attach(document.body);
 })
-// 主页展示，输入框的
+// 主页展示，输入框
 var jump_alink = localStorage.getItem('jump_alink')
+// 异网最后显示弹窗
+var jump_yialink = localStorage.getItem('jump_yialink')
 $(document).ready(function () {
     //是否关注公众号
     var attention = true;
@@ -237,6 +239,7 @@ $(document).ready(function () {
     };
     // 开启回忆
     $('#start_memories').on('click', function () {
+        playMusic()
         resetStyle()
         flipbook();
     });
@@ -248,7 +251,6 @@ $(document).ready(function () {
         } else {
             $('#return').show();
         }
-        playMusic();
         $('.list').show();
         currPage();
     })
@@ -259,7 +261,6 @@ $(document).ready(function () {
                 var ph_index = $(this).index();
                 $('.phdisplay').hide();
                 $('#return').show();
-                playMusic();
                 $('.list').show();
                 jumpPage(ph_index + 1);
             })
@@ -375,8 +376,7 @@ $(document).ready(function () {
                         $('.tc_03').show()
                     } else {
                         // 异网
-                        if ($('#main_share').hasClass('allget')) {
-                      
+                        if (jump_yialink) {
                             $('.tc_07').show()
                         } else {
                         // 异网用户分享：无限卡 
@@ -434,7 +434,6 @@ $(document).ready(function () {
         if (jump_alink == null) {
             localStorage.setItem('jump_alink', true)
         }
-        
     })
     // 异网弹窗2
     $('#givebtn5').on('click', function () {
@@ -460,9 +459,9 @@ $(document).ready(function () {
     })
     // 异网弹窗4
     $('#close7').on('click', function () {
-        $('#main_share').addClass('allget')
-        $(this).parent().hide();
-        hideMask()
+        if (jump_yialink == null) {
+            localStorage.setItem('jump_yialink', true)
+        }
     })
     // 异网弹窗4（确认）
     $('#givebtn4').on('click', function () {
@@ -562,11 +561,6 @@ $(document).ready(function () {
     $('.test4').on('click', function () {
         $('.test4').css('color', 'red');
         CM = false;
-    });
-    $('.test6').on('click', function () {
-        $('.test6').css('color', 'red');
-        localStorage.removeItem('jump_alink')
-        window.location.href = "index.html?time=" + ((new Date()).getTime());
     });
 });
 function playMusic() {

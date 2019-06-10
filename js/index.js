@@ -140,7 +140,7 @@ $(document).ready(function () {
     function time_auto() {
         nextPage = setInterval(function () {
             next_page();
-        }, 4500);
+        }, 5000);
     }
     // 第一页
     $('.flipbook').bind("first", function () {
@@ -270,6 +270,7 @@ $(document).ready(function () {
     // 回忆录中的上一页和下一页
     $('.prev').on('click', function () {
         $('.list').hide()
+        $(".flipbook").turn("page", 1);
         $('.phdisplay').show()
     })
     $('.next').on('click', function () {

@@ -4,6 +4,8 @@ $(function () {
 })
 // 主页展示，输入框
 var jump_alink = localStorage.getItem('jump_alink')
+// 本网（跳转后）显示弹窗
+var jump_cmalink = localStorage.getItem('jump_cmalink')
 // 异网最后显示弹窗
 var jump_yialink = localStorage.getItem('jump_yialink')
 $(document).ready(function () {
@@ -139,7 +141,7 @@ $(document).ready(function () {
     function time_auto() {
         nextPage = setInterval(function () {
             next_page();
-        }, 3500);
+        }, 4500);
     }
     // 第一页
     $('.flipbook').bind("first", function () {
@@ -312,7 +314,7 @@ $(document).ready(function () {
     //点击礼盒
     $('#main_share').on('click', function () {
         isbtn = false
-        ishare ? jiangli() : $('.share').show()
+        ishare||jump_yialink||jump_cmalink ? jiangli() : $('.share').show()
     })
     // 关闭分享(测试用)
     $('.share').on('click', function () {
@@ -376,12 +378,12 @@ $(document).ready(function () {
                         $('.tc_03').show()
                     } else {
                         // 异网
+                        $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
+                        $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
                         if (jump_yialink) {
                             $('.tc_07').show()
                         } else {
                         // 异网用户分享：无限卡 
-                            $('.al_yibg').css('background-image', 'url(images/ban_wuxianka.png)')
-                            $('.a_link_yi').attr('href', 'https://service.bj.10086.cn/m/num/num/commonNum/showFontPage.action?busiCode=WXKWTYW')
                             $('.tc_04').show()
                         }
 
@@ -433,6 +435,13 @@ $(document).ready(function () {
         var jump_alink = localStorage.getItem('jump_alink')
         if (jump_alink == null) {
             localStorage.setItem('jump_alink', true)
+        }
+    })
+    // 本网弹窗
+     // 异网弹窗4
+     $('#close7_cm').on('click', function () {
+        if (jump_cmalink == null) {
+            localStorage.setItem('jump_cmalink', true)
         }
     })
     // 异网弹窗2

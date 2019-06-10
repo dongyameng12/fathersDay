@@ -360,7 +360,7 @@ $(document).ready(function () {
                             case 0:
                                 // 本网
                                 // 手厅活动 
-                                $('.al_cmbg').css('background-image', 'url()')
+                                $('.al_cmbg').css('background-image', 'url(images/ban_cm_shouting.jpg)')
                                 $('.a_link_cm').attr('href', 'http://sc.bj.chinamobile.com/activity/loading/loading.html?actname=coupon')
                                 break;
                             case 1:
@@ -587,7 +587,7 @@ function playMusic() {
     // 播放
     $('#musicMenu').addClass('move');
     document.getElementById("musicMenu").loop = true;
-    document.getElementById("musicMenu").volume = 0.1;
+    document.getElementById("musicMenu").volume = 0.2;
     $('#musicMenu').show();
     music.play();
 }
